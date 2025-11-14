@@ -11,11 +11,8 @@
   const {getArea} = useArea()
   onMounted(async()=>{
     const viewer=await initCesium('cesiumContainer')
-    const {successDS} =await getArea(viewer)
-    // 聚合所有实体
-    const allEntities = successDS.flatMap(ds => ds.entities.values)
-
-    viewer.zoomTo(allEntities)
+    const {mergedDS} =await getArea(viewer)
+    viewer.zoomTo(mergedDS.entities.values)
   })
 
 </script>
