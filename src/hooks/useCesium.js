@@ -1,14 +1,16 @@
 import * as Cesium from "cesium";
+import {ref} from "vue";
 
 const tdtToken = '76a9b96b99bff2462b4611526d86c106'
 export default function useCesium(){
+    let viewer = ref(null)
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGki' +
         'OiJlOGE0ZGMyMS05YTlkLTRlMzYtYjA4OC03NjVlZWU2NDdkODQiLCJpZCI6MzA4MzY0LCJp' +
         'YXQiOjE3NjE4MjkxMTN9.ZfP8iq_OKLMnbLiv6zSCYKmXa3XNZCuB9MG-afFtD-c'
     async function initCesium(container){
         const creditContainer = document.createElement('div');
         creditContainer.style.display = 'none'; // 隐藏
-        const viewer = new Cesium.Viewer(container,{
+        viewer.value = new Cesium.Viewer(container,{
             timeline: false, // 显示时间轴
             animation: false, // 显示动画控件
             baseLayerPicker: false, // 显示底图选择器
@@ -20,16 +22,16 @@ export default function useCesium(){
             geocoder: false,
             creditContainer: creditContainer
         });
-        viewer.scene.globe.enableLighting = false
-        viewer.shadows = false
+        viewer.value.scene.globe.enableLighting = false;
+        viewer.value.shadows = false;
         // 异步加载图层，避免阻塞
         const providers = await imageryProvider(0)
-        await addImageryLayersConcurrently(viewer, providers)
+        await addImageryLayersConcurrently(viewer.value, providers)
         // for (const provider of providers) {
         //     const layer = await Cesium.ImageryLayer.fromProviderAsync(provider)
         //     viewer.imageryLayers.add(layer)
         // }
-        return viewer
+        return viewer.value
     }
     async function imageryProvider(type) {
         const option = {
@@ -99,5 +101,5 @@ export default function useCesium(){
         // 保留原版优点：返回handler方便销毁
         return handler
     }
-    return{initCesium,setupMouseCoordinateDisplay}
+    return{initCesium,setupMouseCoordinateDisplay,viewer}
 }
