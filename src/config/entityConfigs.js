@@ -61,5 +61,40 @@ export const entityConfigs = [
         api: () => import('@/api/system/aroundanalysis.js').then(m => m.getSubway),
         icon: () => import('@/assets/images/subway.png'),
         defaultVisible: false
+    },
+    {
+        key: 'debris_flow',
+        name: '泥石流隐患点',
+        api: () => import('@/api/earthquake/datas.js').then(m => m.dataOnHiddenDangerPointsOfDebrisFlow),
+        icon: () => import('@/assets/images/DebrisFlow.png'),
+        defaultVisible: false
+    },
+    {
+        key: 'landslide',
+        name: '滑坡隐患点',
+        api: () => import('@/api/earthquake/datas.js').then(m => m.landslideHazardPointData),
+        icon: () => import('@/assets/images/landslide.png'),
+        defaultVisible: false
+    },
+    {
+        key: 'risk_area',
+        name: '风险区域',
+        api: () => import('@/api/earthquake/datas.js').then(m => m.riskVillageData),
+        icon: () => import('@/assets/images/riskArea.png'),
+        defaultVisible: false
+    },
+    {
+        key: 'flash_flood',
+        name: '山洪隐患点',
+        api: () => import('@/api/system/aroundanalysis.js').then(m => m.getFlashFlood),
+        icon: () => import('@/assets/images/flashflood.png'),
+        defaultVisible: false
+    },
+    {
+        key: 'water_logging',
+        name: '内涝隐患点',
+        api: () => import('@/api/system/aroundanalysis.js').then(m => m.getWater),
+        icon: () => import('@/assets/images/water.png'),
+        defaultVisible: false
     }
 ];

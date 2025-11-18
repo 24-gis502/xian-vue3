@@ -61,7 +61,13 @@ export default defineConfig(({ mode, command }) => {
          '^/v3/api-docs/(.*)': {
           target: baseUrl,
           changeOrigin: true,
-        }
+        },
+         '/geo': {
+          // target: 'http://10.22.245.246:8088',
+          target: 'http://localhost:9090',
+              changeOrigin: true,
+              rewrite: (path) => path.replace(/^\/geo/, '')
+        },
       }
     },
     css: {

@@ -7,7 +7,7 @@
       <div id="cesiumContainer" class="map-view"></div>
     </div>
     <div
-        v-if="selectedEntityData"
+        v-if="selectedEntityData && selectedEntityData.properties"
         class="disaster-popup"
         :style="{
         left: `${popupPosition.x}px`,
@@ -270,7 +270,7 @@ const viewerRef = ref(null)
 const entityManagerRef = ref(null)
 
 provide('cesiumViewer', viewerRef)
-provide('entityManager', entityManagerRef.value)
+provide('entityManager', entityManagerRef)
 
 
 import useCesium from "@/hooks/useCesium.js"
@@ -289,9 +289,63 @@ const {popup,closePopup, popupPosition, popupVisible, selectedEntityData} = useE
 
 const disasterEntities = ref([])
 
+const cropsLayerName= 'xian:xian_crops'
+const peopleLayerName= 'xian:xian_people'
+const waterPipeLayerName= 'xian:xian_water_pipe'
+const  roadLayerName= 'xian:xian_road'
+const  bridgeLayerName= 'xian:xian_bridge_points'
+const  highwayLayerName= 'xian:xian_highway'
+const  nationalRoadLayerName= 'xian:xian_national_road'
+const  reservoirLayerName= 'xian:xian_reservoir_list'
+const  subwayLayerName= 'xian:xian_subway'
+const geoUrl= '/geo'
+function addPeopleLayer(){
+  // TODO 过滤掉人口为 0 的数据，做按人口分类显示（5档）
+  console.log("人口数据：" + peopleLayerName)
+  const peopleLayer = addLayers(peopleLayerName);
+}
+function addCropsLayer(){
+  const cropsLayer = addLayers(cropsLayerName);
+}
+function addWaterPipeLayer(){
+  const waterPipeLayer = addLayers(waterPipeLayerName);
+}
+function addRoadLayer(){
+  const roadLayer = addLayers(roadLayerName);
+}
+function addHighwayLayer(){
+  const highwayLayer = addLayers(highwayLayerName);
+}
+function addNationalRoad(){
+  const nationalRoadLayer = addLayers(nationalRoadLayerName);
+}
+//添加图层
+function addLayers(name) {
+  // 根据用户提供的有效GeoServer WMS服务URL配置
+  return viewerRef.value.imageryLayers.addImageryProvider(
+      new Cesium.WebMapServiceImageryProvider({
+        url: `${geoUrl}/geoserver/xian/wms`,
+        layers: name,
+        parameters: {
+          tiled: true,
+          transparent: true,
+          format: 'image/png',
+          srs: 'EPSG:4490',
+          version: '1.1.0', // 与用户提供的有效URL版本一致
+        },
+        flyTo: true,
+        show: true,
+      })
+  );
+}
+
+
+
 import { EntityManager } from '@/utils/entityManager'
 import { entityConfigs } from '@/config/entityConfigs'
 import entityControl from '@/components/entityControl.vue'
+import * as Cesium from "cesium";
+
 onMounted(async () => {
   // 初始化Cesium
   const viewerInstance = await initCesium('cesiumContainer')
@@ -302,11 +356,19 @@ onMounted(async () => {
   entityManagerRef.value = manager
 
 
+  // addPeopleLayer()
+  // addCropsLayer()
+  // addWaterPipeLayer()
+  // addRoadLayer()
+  // addHighwayLayer()
+  // addNationalRoad()
   const {mergedDS} = await getArea(viewerRef.value)
   viewerRef.value.zoomTo(mergedDS.entities.values)
 
   popup(viewerRef.value)
-
+  viewerRef.value.screenSpaceEventHandler.setInputAction(() => {
+    closePopup()
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 
   showEntityControl.value = true
 })

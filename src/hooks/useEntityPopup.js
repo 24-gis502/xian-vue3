@@ -13,11 +13,11 @@ export default function useEntityPopup(viewer){
         clickHandler.setInputAction((movement) => {
             const pickedObject = viewer.scene.pick(movement.position)
             // 核心修复：调整判断顺序 → 先分「有效实体」和「无效点击」
-            if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id) && pickedObject.id.disasterData) {
+            if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id) && pickedObject.id.properties) {
                 // 情况1：点击到「带 disasterData 的有效实体」→ 显示弹窗
                 closePopup(); // 先关闭之前的弹窗
                 const entity = pickedObject.id;
-                selectedEntityData.value = entity.disasterData || {};
+                selectedEntityData.value = { properties: entity.properties || {} };
                 calculateAndShowPopup(entity, movement.position, viewer);
             } else {
                 // 情况2：点击空白处 / 无数据实体 → 直接关闭弹窗
