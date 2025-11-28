@@ -34,6 +34,30 @@ export const constantRoutes = [
       {
         path: '/redirect/:path(.*)',
         component: () => import('@/views/redirect/index.vue')
+      },
+    ]
+  },
+  {
+    path: '/admins',
+    component: Layout,
+    redirect: '/rain_flood',
+    name: 'Home',
+    children: [
+      // 这里可以放其他子路由
+    ]
+  },
+  // 修正：将地震次生灾害作为独立路由
+  {
+    path: '/earthquake_secondary_disasters',
+    component: Layout,
+    name: 'Earthquake_Secondary_Disasters',
+    meta: { title: '次生衍生灾害链分析' },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/Earthquake_SecondaryDisasters'),
+        name: 'Earthquake_Secondary_Disasters_Content',
+        meta: { title: '次生衍生灾害链分析' }
       }
     ]
   },
