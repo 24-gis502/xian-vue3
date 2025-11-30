@@ -1,0 +1,3515 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 1,
+        "disasterName": "库峪河村十组佛爷庙-二十里庙(B13)",
+        "unitCode": "610116023006FX2013",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.763316214247",
+        "residentCounts": "2",
+        "addressPopulation": "6",
+        "riskProperty": "60",
+        "permanentPopulation": "6",
+        "housing": "6",
+        "username": "张均红",
+        "phone": 18191854669
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 2,
+        "disasterName": "新农村五组 1(C5)",
+        "unitCode": "610116019009FX3005",
+        "position": "五台街道新农村",
+        "lon": "108.984103",
+        "lat": "34.022952",
+        "area": "0.115304390635334",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "5",
+        "username": "王刚",
+        "phone": 13299110577
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.984103,
+          34.022952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 3,
+        "disasterName": "库峪河村五组库峪乡(B15)",
+        "unitCode": "610116023006FX2015",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.337593258020986",
+        "residentCounts": "2",
+        "addressPopulation": "3",
+        "riskProperty": "60",
+        "permanentPopulation": "3",
+        "housing": "6",
+        "username": "李全喜",
+        "phone": 13892009586
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 4,
+        "disasterName": "库峪河村十八组坪沟(B1)",
+        "unitCode": "610116023006FX2001",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.287969440742",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "5",
+        "username": "李鸳",
+        "phone": 15802945800
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 5,
+        "disasterName": "嘴头村十组 1  (C3)",
+        "unitCode": "610116017015FX3003",
+        "position": "鸣犊街道嘴头村",
+        "lon": "109.109699",
+        "lat": "34.125103",
+        "area": "0.0447750814414691",
+        "residentCounts": "1",
+        "addressPopulation": "6",
+        "riskProperty": "30",
+        "permanentPopulation": "6",
+        "housing": "5",
+        "username": "肖旭英",
+        "phone": 13474666678
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.109699,
+          34.125103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 6,
+        "disasterName": "沣峪林场韭菜滩组大坝沟管护站(B9)",
+        "unitCode": "610116003101FX2009",
+        "position": "滦镇街道沣峪林场",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.0400582824471",
+        "residentCounts": "1",
+        "addressPopulation": "8",
+        "riskProperty": "100",
+        "permanentPopulation": "8",
+        "housing": "8",
+        "username": "杨剑波",
+        "phone": 13759880828
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 7,
+        "disasterName": "喂子坪村北石槽组原北石槽村(B10)",
+        "unitCode": "610116003017FX2010",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.0443830852273",
+        "residentCounts": "15",
+        "addressPopulation": "56",
+        "riskProperty": "450",
+        "permanentPopulation": "56",
+        "housing": "50",
+        "username": "王能友",
+        "phone": 15229030899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 8,
+        "disasterName": "东祥村麓鸣圆小区组环山路东北侧、南侧(B6)",
+        "unitCode": "610116008003FX2006",
+        "position": "东大街道东祥村",
+        "lon": "108.899798",
+        "lat": "34.089918",
+        "area": "0.238947571965251",
+        "residentCounts": "2",
+        "addressPopulation": "3",
+        "riskProperty": "200",
+        "permanentPopulation": "3",
+        "housing": "24",
+        "username": "张康林",
+        "phone": 13689266213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.899798,
+          34.089918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 9,
+        "disasterName": "百塔寺村四组西岭(B3)",
+        "unitCode": "610116009010FX2003",
+        "position": "子午街道百塔寺村",
+        "lon": "108.931609",
+        "lat": "34.034421",
+        "area": "0.660414430935886",
+        "residentCounts": "11",
+        "addressPopulation": "36",
+        "riskProperty": "360",
+        "permanentPopulation": "36",
+        "housing": "40",
+        "username": "罗昌武",
+        "phone": 18092706538
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.931609,
+          34.034421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 10,
+        "disasterName": "沣峪村碌碡坪组原碌碡坪村(B8)",
+        "unitCode": "610116003006FX2008",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.45551755195",
+        "residentCounts": "3",
+        "addressPopulation": "7",
+        "riskProperty": "170",
+        "permanentPopulation": "7",
+        "housing": "10",
+        "username": "吕小荣",
+        "phone": 18681826728
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 11,
+        "disasterName": "寺坡村五组     1(B2)",
+        "unitCode": "610116012002FX2002",
+        "position": "杜曲街道寺坡村",
+        "lon": "109.013035",
+        "lat": "34.099395",
+        "area": "0.24826148602975",
+        "residentCounts": "5",
+        "addressPopulation": "16",
+        "riskProperty": "150",
+        "permanentPopulation": "16",
+        "housing": "22",
+        "username": "余康锁",
+        "phone": 18706789391
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.013035,
+          34.099395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 12,
+        "disasterName": "百塔寺村一、二组东岭(B6)",
+        "unitCode": "610116009010FX2006",
+        "position": "子午街道百塔寺村",
+        "lon": "108.931609",
+        "lat": "34.034421",
+        "area": "0.63202428963672",
+        "residentCounts": "37",
+        "addressPopulation": "112",
+        "riskProperty": "1200",
+        "permanentPopulation": "110",
+        "housing": "130",
+        "username": "刘峰",
+        "phone": 13201576531
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.931609,
+          34.034421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 13,
+        "disasterName": "五台林场南五台组台沟管护站(C2)",
+        "unitCode": "610116019101FX3002",
+        "position": "五台街道五台林场",
+        "lon": "108.970511",
+        "lat": "34.031899",
+        "area": "0.225042271073",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "100",
+        "permanentPopulation": "0",
+        "housing": "12",
+        "username": "付养谋",
+        "phone": 13571954138
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.970511,
+          34.031899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 14,
+        "disasterName": "新街南村四组北确寺(C1)",
+        "unitCode": "610116007010FX3001",
+        "position": "太乙宫街道新街南村",
+        "lon": "109.014904",
+        "lat": "34.059695",
+        "area": "0.0813434783287146",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "4",
+        "username": "邢彦龙",
+        "phone": 13991906522
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014904,
+          34.059695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 15,
+        "disasterName": "太乙村翠华山组西峰滑道售票处(C10)",
+        "unitCode": "610116007008FX3010",
+        "position": "太乙宫街道太乙村",
+        "lon": "109.006233",
+        "lat": "34.016204",
+        "area": "0.0444756676858",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "30",
+        "permanentPopulation": "0",
+        "housing": "1",
+        "username": "李勇",
+        "phone": 13474677845
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.006233,
+          34.016204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 16,
+        "disasterName": "沙场村十组蛟峪农家乐  (C9)",
+        "unitCode": "610116007005FX3009",
+        "position": "太乙宫街道沙场村",
+        "lon": "109.014238",
+        "lat": "34.026996",
+        "area": "0.0849160246009",
+        "residentCounts": "4",
+        "addressPopulation": "11",
+        "riskProperty": "30",
+        "permanentPopulation": "11",
+        "housing": "4",
+        "username": "李燕",
+        "phone": 13468811011
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014238,
+          34.026996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 17,
+        "disasterName": "喂子坪村北石槽组南石槽沟西口(B9)",
+        "unitCode": "610116003017FX2009",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.0957821796256",
+        "residentCounts": "3",
+        "addressPopulation": "8",
+        "riskProperty": "90",
+        "permanentPopulation": "8",
+        "housing": "12",
+        "username": "王能友",
+        "phone": 15229030899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 18,
+        "disasterName": "库峪河村七组太沟(B11)",
+        "unitCode": "610116023006FX2011",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.0463293820210586",
+        "residentCounts": "2",
+        "addressPopulation": "4",
+        "riskProperty": "60",
+        "permanentPopulation": "4",
+        "housing": "6",
+        "username": "陈安平",
+        "phone": 15353610981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 19,
+        "disasterName": "师村六组1   (B1)",
+        "unitCode": "610116017003FX2001",
+        "position": "鸣犊街道师村",
+        "lon": "109.090619",
+        "lat": "34.164977",
+        "area": "0.151360997423364",
+        "residentCounts": "4",
+        "addressPopulation": "14",
+        "riskProperty": "120",
+        "permanentPopulation": "14",
+        "housing": "16",
+        "username": "赵战民",
+        "phone": 17392247317
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.090619,
+          34.164977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 20,
+        "disasterName": "皇甫村三组赵成棋家屋后(C3)",
+        "unitCode": "610116016218FX3002",
+        "position": "王曲街道皇甫村",
+        "lon": "108.953608",
+        "lat": "34.098036",
+        "area": "0.0045143203238836",
+        "residentCounts": "3",
+        "addressPopulation": "11",
+        "riskProperty": "90",
+        "permanentPopulation": "11",
+        "housing": "17",
+        "username": "陈利民",
+        "phone": 18991356141
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.953608,
+          34.098036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 21,
+        "disasterName": "太乙村四组原水湫池村(B6)",
+        "unitCode": "610116007008FX2006",
+        "position": "太乙宫街道太乙村",
+        "lon": "109.006233",
+        "lat": "34.016204",
+        "area": "0.20029901098",
+        "residentCounts": "21",
+        "addressPopulation": "87",
+        "riskProperty": "630",
+        "permanentPopulation": "87",
+        "housing": "66",
+        "username": "杨东奇",
+        "phone": 15319469838
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.006233,
+          34.016204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 22,
+        "disasterName": "库峪河村十二组柳树林(B8)",
+        "unitCode": "610116023006FX2008",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.186089029125",
+        "residentCounts": "1",
+        "addressPopulation": "3",
+        "riskProperty": "30",
+        "permanentPopulation": "3",
+        "housing": "4",
+        "username": "周双喜",
+        "phone": 18717386015
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 23,
+        "disasterName": "瓜洲村一组二组东北角   (C2)",
+        "unitCode": "610116001005FX3002",
+        "position": "韦曲街道瓜洲村",
+        "lon": "108.949937",
+        "lat": "34.124816",
+        "area": "0.0896464444789555",
+        "residentCounts": "5",
+        "addressPopulation": "18",
+        "riskProperty": "120",
+        "permanentPopulation": "18",
+        "housing": "19",
+        "username": "郑西英",
+        "phone": 15389047994
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.949937,
+          34.124816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 24,
+        "disasterName": "沙场村天池寺组   .(C3)",
+        "unitCode": "610116007005FX3003",
+        "position": "太乙宫街道沙场村",
+        "lon": "109.014238",
+        "lat": "34.026996",
+        "area": "0.0367525888194",
+        "residentCounts": "4",
+        "addressPopulation": "10",
+        "riskProperty": "120",
+        "permanentPopulation": "10",
+        "housing": "6",
+        "username": "刘雪茶",
+        "phone": 15094026755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014238,
+          34.026996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 25,
+        "disasterName": "嘉午台村七组大石头沟(C5)",
+        "unitCode": "610116004012FX3005",
+        "position": "引镇街道嘉午台村",
+        "lon": "109.096052",
+        "lat": "33.986142",
+        "area": "0.136345591146527",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "7",
+        "username": "张卜",
+        "phone": 15929322399
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.096052,
+          33.986142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 26,
+        "disasterName": "喂子坪村鸡窝子组龙窝子-凤凰咀(B3)",
+        "unitCode": "610116003017FX2003",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.484877577112",
+        "residentCounts": "0",
+        "addressPopulation": "",
+        "riskProperty": "240",
+        "permanentPopulation": "",
+        "housing": "0",
+        "username": "陈海兵",
+        "phone": 13992869940
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 27,
+        "disasterName": "砲里村十组关家(B1)",
+        "unitCode": "610116024001FX2001",
+        "position": "砲里街道砲里村",
+        "lon": "109.142453",
+        "lat": "34.166387",
+        "area": "0.192884996940607",
+        "residentCounts": "2",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "4",
+        "username": "王民利",
+        "phone": 13892847490
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.142453,
+          34.166387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 28,
+        "disasterName": "喂子坪村关坪寺组红岩子-玉皇坪(B11)",
+        "unitCode": "610116003017FX2011",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.880531678871516",
+        "residentCounts": "42",
+        "addressPopulation": "138",
+        "riskProperty": "960",
+        "permanentPopulation": "138",
+        "housing": "117",
+        "username": "蔡克强",
+        "phone": 13572064808
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 29,
+        "disasterName": "高家湾村一组高春山屋后(B1)",
+        "unitCode": "610116016225FX2001",
+        "position": "王曲街道高家湾村",
+        "lon": "108.945974",
+        "lat": "34.101008",
+        "area": "0.00913261844766845",
+        "residentCounts": "7",
+        "addressPopulation": "7",
+        "riskProperty": "210",
+        "permanentPopulation": "1",
+        "housing": "41",
+        "username": "高红",
+        "phone": 13772108882
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.945974,
+          34.101008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 30,
+        "disasterName": "小峪口村十二组 1   (B3)",
+        "unitCode": "610116018013FX2003",
+        "position": "王莽街道小峪口村",
+        "lon": "109.075191",
+        "lat": "33.996601",
+        "area": "0.913654825400343",
+        "residentCounts": "20",
+        "addressPopulation": "76",
+        "riskProperty": "600",
+        "permanentPopulation": "76",
+        "housing": "60",
+        "username": "王稳计",
+        "phone": 15399457166
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.075191,
+          33.996601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 31,
+        "disasterName": "劳动村六组周泉家屋后(C10)",
+        "unitCode": "610116016231FX3001",
+        "position": "王曲街道劳动村",
+        "lon": "108.970855",
+        "lat": "34.047648",
+        "area": "0.0182941238009467",
+        "residentCounts": "2",
+        "addressPopulation": "6",
+        "riskProperty": "60",
+        "permanentPopulation": "6",
+        "housing": "18",
+        "username": "姚建安",
+        "phone": 18161935078
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.970855,
+          34.047648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 32,
+        "disasterName": "王曲村一组雷元民家屋后(C7)",
+        "unitCode": "610116016200FX3003",
+        "position": "王曲街道王曲村",
+        "lon": "108.969846",
+        "lat": "34.076930",
+        "area": "0.0114983444613698",
+        "residentCounts": "3",
+        "addressPopulation": "9",
+        "riskProperty": "90",
+        "permanentPopulation": "9",
+        "housing": "9",
+        "username": "雷军军",
+        "phone": 13152126318
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.969846,
+          34.07693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 33,
+        "disasterName": "库峪河村七组小关坪(B9)",
+        "unitCode": "610116023006FX2009",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.0330769680624",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "3",
+        "username": "侯根尚",
+        "phone": 15229276902
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 34,
+        "disasterName": "杜角镇村九组子午峪口(B2)",
+        "unitCode": "610116009007FX2002",
+        "position": "子午街道杜角镇村",
+        "lon": "108.899798",
+        "lat": "34.089918",
+        "area": "0.156314242779414",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "10",
+        "username": "赵永哲",
+        "phone": 15902963969
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.899798,
+          34.089918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 35,
+        "disasterName": "白庙村七组   北侧(B2)",
+        "unitCode": "610116025002FX2002",
+        "position": "魏寨街道白庙村",
+        "lon": "109.199251",
+        "lat": "34.107647",
+        "area": "0.349435575476958",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "12",
+        "username": "郝旭",
+        "phone": 15389237891
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.199251,
+          34.107647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 36,
+        "disasterName": "库峪河村十三组割膝岔(B7)",
+        "unitCode": "610116023006FX2007",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.419814355145",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "4",
+        "username": "黎小鸣",
+        "phone": 13468845983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 37,
+        "disasterName": "候村六组   1(B1)",
+        "unitCode": "610116025004FX2001",
+        "position": "魏寨街道候村",
+        "lon": "108.899798",
+        "lat": "34.089918",
+        "area": "0.317148752849464",
+        "residentCounts": "21",
+        "addressPopulation": "79",
+        "riskProperty": "660",
+        "permanentPopulation": "79",
+        "housing": "88",
+        "username": "王新民",
+        "phone": 15929724505
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.899798,
+          34.089918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 38,
+        "disasterName": "喂子坪村观坪寺组雨蒙农家院附近(B13)",
+        "unitCode": "610116003017FX2013",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.122306150872",
+        "residentCounts": "15",
+        "addressPopulation": "47",
+        "riskProperty": "360",
+        "permanentPopulation": "47",
+        "housing": "47",
+        "username": "屈全斌",
+        "phone": 15609220722
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 39,
+        "disasterName": "许羊村二组许家沟村(C4)",
+        "unitCode": "610116004020FX3004",
+        "position": "引镇街道许羊村",
+        "lon": "109.101030",
+        "lat": "34.087752",
+        "area": "0.102298809891258",
+        "residentCounts": "13",
+        "addressPopulation": "37",
+        "riskProperty": "390",
+        "permanentPopulation": "37",
+        "housing": "37",
+        "username": "丁菲",
+        "phone": 18092392810
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.10103,
+          34.087752
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 40,
+        "disasterName": "喂子坪村青岗树组原青岗树村、关石村(B6)",
+        "unitCode": "610116003017FX2006",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "1.27182093447052",
+        "residentCounts": "109",
+        "addressPopulation": "382",
+        "riskProperty": "2010",
+        "permanentPopulation": "382",
+        "housing": "260",
+        "username": "闫峰涛",
+        "phone": 17792574130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 41,
+        "disasterName": "皇甫村一组皇甫小学  (C2)",
+        "unitCode": "610116016218FX3001",
+        "position": "王曲街道皇甫村",
+        "lon": "108.953608",
+        "lat": "34.098036",
+        "area": "0.0424057588911333",
+        "residentCounts": "0",
+        "addressPopulation": "",
+        "riskProperty": "40",
+        "permanentPopulation": "",
+        "housing": "4",
+        "username": "罗选利",
+        "phone": 15829079541
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.953608,
+          34.098036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 42,
+        "disasterName": "天王村二、四组七里庙(B5)",
+        "unitCode": "610116004017FX2005",
+        "position": "引镇街道天王村",
+        "lon": "109.127163",
+        "lat": "34.090734",
+        "area": "0.415711796555537",
+        "residentCounts": "3",
+        "addressPopulation": "9",
+        "riskProperty": "90",
+        "permanentPopulation": "9",
+        "housing": "12",
+        "username": "李永利",
+        "phone": 13991871375
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.127163,
+          34.090734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 43,
+        "disasterName": "星火村三组   弥勒寺(C4)",
+        "unitCode": "610116019010FX3004",
+        "position": "五台街道星火村",
+        "lon": "108.972384",
+        "lat": "34.020340",
+        "area": "0.11608794027114",
+        "residentCounts": "6",
+        "addressPopulation": "8",
+        "riskProperty": "180",
+        "permanentPopulation": "8",
+        "housing": "18",
+        "username": "刘龙",
+        "phone": 13891981891
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.972384,
+          34.02034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 44,
+        "disasterName": "抱龙村一组抱龙峪沟口(B2)",
+        "unitCode": "610116009002FX2002",
+        "position": "子午街道抱龙村",
+        "lon": "108.915011",
+        "lat": "34.040866",
+        "area": "0.129253228021",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "1000",
+        "permanentPopulation": "0",
+        "housing": "50",
+        "username": "陈宏选",
+        "phone": 15332312195
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.915011,
+          34.040866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 45,
+        "disasterName": "新二村三组. 青华山景区(C4)",
+        "unitCode": "610116003023FX3004",
+        "position": "滦镇街道新二村",
+        "lon": "108.830020",
+        "lat": "34.055679",
+        "area": "0.040718784877",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "530",
+        "permanentPopulation": "2",
+        "housing": "2",
+        "username": "李晨",
+        "phone": 17791843652
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.83002,
+          34.055679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 46,
+        "disasterName": "西尧村石砭峪水库发电站组  发电站(C5)",
+        "unitCode": "610116019008FX3005",
+        "position": "五台街道西尧村",
+        "lon": "108.953148",
+        "lat": "34.024361",
+        "area": "0.0784555435739",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "200",
+        "permanentPopulation": "0",
+        "housing": "15",
+        "username": "张生",
+        "phone": 13892871273
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.953148,
+          34.024361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 47,
+        "disasterName": "夏候村三组夏候村三组(C3)",
+        "unitCode": "610116012009FX3003",
+        "position": "杜曲街道夏候村",
+        "lon": "109.000633",
+        "lat": "34.114272",
+        "area": "0.0946943761491143",
+        "residentCounts": "23",
+        "addressPopulation": "67",
+        "riskProperty": "690",
+        "permanentPopulation": "67",
+        "housing": "103",
+        "username": "范恒",
+        "phone": 18161979993
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.000633,
+          34.114272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 48,
+        "disasterName": "沣峪村黎园坪组黎园坪(B7)",
+        "unitCode": "610116003006FX2007",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.527246052376",
+        "residentCounts": "78",
+        "addressPopulation": "244",
+        "riskProperty": "2580",
+        "permanentPopulation": "244",
+        "housing": "407",
+        "username": "刘国立",
+        "phone": 15229062702
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 49,
+        "disasterName": "新农村五组康峪沟(B1)",
+        "unitCode": "610116019009FX2001",
+        "position": "五台街道新农村",
+        "lon": "108.984103",
+        "lat": "34.022952",
+        "area": "0.0873745151790125",
+        "residentCounts": "3",
+        "addressPopulation": "10",
+        "riskProperty": "90",
+        "permanentPopulation": "10",
+        "housing": "15",
+        "username": "王刚",
+        "phone": 13299110577
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.984103,
+          34.022952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 50,
+        "disasterName": "藏龙寨村十组杨立民家屋后(C8)",
+        "unitCode": "610116016230FX3001",
+        "position": "王曲街道藏龙寨村",
+        "lon": "108.972712",
+        "lat": "34.065414",
+        "area": "0.00341068652681033",
+        "residentCounts": "1",
+        "addressPopulation": "5",
+        "riskProperty": "60",
+        "permanentPopulation": "5",
+        "housing": "10",
+        "username": "徐来民",
+        "phone": 13201604815
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.972712,
+          34.065414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 51,
+        "disasterName": "大峪新村十五组杏园村(B1)",
+        "unitCode": "610116004002FX2001",
+        "position": "引镇街道大峪新村",
+        "lon": "109.118702",
+        "lat": "34.002722",
+        "area": "0.184641178069322",
+        "residentCounts": "17",
+        "addressPopulation": "52",
+        "riskProperty": "510",
+        "permanentPopulation": "52",
+        "housing": "105",
+        "username": "储有利",
+        "phone": 18092904098
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.118702,
+          34.002722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 52,
+        "disasterName": "甫店村八组七里坪(B1)",
+        "unitCode": "610116009008FX2001",
+        "position": "子午街道甫店村",
+        "lon": "108.929077",
+        "lat": "34.068588",
+        "area": "0.422159351272",
+        "residentCounts": "4",
+        "addressPopulation": "10",
+        "riskProperty": "120",
+        "permanentPopulation": "10",
+        "housing": "11",
+        "username": "曹胜利",
+        "phone": 18149014679
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.929077,
+          34.068588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 53,
+        "disasterName": "石翔村三组凤翔新村(B3)",
+        "unitCode": "610116023008FX2003",
+        "position": "杨庄街道石翔村",
+        "lon": "109.145111",
+        "lat": "34.041190",
+        "area": "0.0990171571783",
+        "residentCounts": "3",
+        "addressPopulation": "11",
+        "riskProperty": "90",
+        "permanentPopulation": "11",
+        "housing": "3",
+        "username": "王超",
+        "phone": 13152055780
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.145111,
+          34.04119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 54,
+        "disasterName": "韦兆西村三组   1(C4)",
+        "unitCode": "610116018012FX3004",
+        "position": "王莽街道韦兆西村",
+        "lon": "109.067520",
+        "lat": "34.074428",
+        "area": "0.185087939964528",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "0",
+        "housing": "4",
+        "username": "冯拴利",
+        "phone": 15529536335
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.06752,
+          34.074428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 55,
+        "disasterName": "祥峪村高山流水别墅区组1(B9)",
+        "unitCode": "610116008011FX2009",
+        "position": "东大街道祥峪村",
+        "lon": "108.793628",
+        "lat": "33.990239",
+        "area": "0.147378830294984",
+        "residentCounts": "49",
+        "addressPopulation": "49",
+        "riskProperty": "1440",
+        "permanentPopulation": "49",
+        "housing": "48",
+        "username": "刘大锁",
+        "phone": 13659202755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.793628,
+          33.990239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 56,
+        "disasterName": "东尧村一组  村口(C2)",
+        "unitCode": "610116019002FX3002",
+        "position": "五台街道东尧村",
+        "lon": "108.956337",
+        "lat": "34.027945",
+        "area": "0.0684703570363",
+        "residentCounts": "8",
+        "addressPopulation": "24",
+        "riskProperty": "240",
+        "permanentPopulation": "24",
+        "housing": "32",
+        "username": "赵江",
+        "phone": 18291884061
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.956337,
+          34.027945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 57,
+        "disasterName": "东祥村十组观音堂(C4)",
+        "unitCode": "610116008003FX3004",
+        "position": "东大街道东祥村",
+        "lon": "108.793394",
+        "lat": "34.035803",
+        "area": "0.145628433764281",
+        "residentCounts": "40",
+        "addressPopulation": "109",
+        "riskProperty": "1140",
+        "permanentPopulation": "109",
+        "housing": "152",
+        "username": "刘建娃",
+        "phone": 13571975991
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.793394,
+          34.035803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 58,
+        "disasterName": "沣峪林场上鸡窝子组清凉寺(B7)",
+        "unitCode": "610116003101FX2007",
+        "position": "滦镇街道沣峪林场",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.10221229166",
+        "residentCounts": "7",
+        "addressPopulation": "7",
+        "riskProperty": "210",
+        "permanentPopulation": "0",
+        "housing": "7",
+        "username": "李越",
+        "phone": 18729988997
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 59,
+        "disasterName": "五台林场康峪沟组管护站(C1)",
+        "unitCode": "610116019101FX3001",
+        "position": "五台街道五台林场",
+        "lon": "108.970511",
+        "lat": "34.031899",
+        "area": "0.0716569959302",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "50",
+        "permanentPopulation": "0",
+        "housing": "4",
+        "username": "朱小波",
+        "phone": 15229025235
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.970511,
+          34.031899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 60,
+        "disasterName": "王曲村一组雷有民家屋后(C6)",
+        "unitCode": "610116016200FX3002",
+        "position": "王曲街道王曲村",
+        "lon": "108.969846",
+        "lat": "34.076930",
+        "area": "0.0214076460924874",
+        "residentCounts": "2",
+        "addressPopulation": "6",
+        "riskProperty": "60",
+        "permanentPopulation": "6",
+        "housing": "9",
+        "username": "姚东汉",
+        "phone": 13152126318
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.969846,
+          34.07693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 61,
+        "disasterName": "东三村一、三组松坪山口(B1)",
+        "unitCode": "610116009005FX2001",
+        "position": "子午街道东三村",
+        "lon": "108.899798",
+        "lat": "34.089918",
+        "area": "0.211716009221974",
+        "residentCounts": "13",
+        "addressPopulation": "39",
+        "riskProperty": "390",
+        "permanentPopulation": "38",
+        "housing": "39",
+        "username": "辛亮",
+        "phone": 13772002282
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.899798,
+          34.089918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 62,
+        "disasterName": "高家湾村一组钟洋屋后(C1)",
+        "unitCode": "610116016225FX3002",
+        "position": "王曲街道高家湾村",
+        "lon": "108.945974",
+        "lat": "34.101008",
+        "area": "0.00710879036272457",
+        "residentCounts": "2",
+        "addressPopulation": "3",
+        "riskProperty": "60",
+        "permanentPopulation": "3",
+        "housing": "10",
+        "username": "罗选利",
+        "phone": 15829079541
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.945974,
+          34.101008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 63,
+        "disasterName": "光辉村十一组擂鼓石(C5)",
+        "unitCode": "610116004007FX3005",
+        "position": "引镇街道光辉村",
+        "lon": "109.085782",
+        "lat": "34.116236",
+        "area": "0.150957213637",
+        "residentCounts": "7",
+        "addressPopulation": "11",
+        "riskProperty": "210",
+        "permanentPopulation": "11",
+        "housing": "21",
+        "username": "陈志均",
+        "phone": 15384640835
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.085782,
+          34.116236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 64,
+        "disasterName": "百塔寺村四组西岭(B4)",
+        "unitCode": "610116009010FX2004",
+        "position": "子午街道百塔寺村",
+        "lon": "108.931609",
+        "lat": "34.034421",
+        "area": "0.318029581459",
+        "residentCounts": "22",
+        "addressPopulation": "66",
+        "riskProperty": "660",
+        "permanentPopulation": "66",
+        "housing": "66",
+        "username": "罗昌武",
+        "phone": 18092706538
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.931609,
+          34.034421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 65,
+        "disasterName": "祥峪村三组祥峪沟(B7)",
+        "unitCode": "610116008011FX2007",
+        "position": "东大街道祥峪村",
+        "lon": "108.793628",
+        "lat": "33.990239",
+        "area": "2.03390954822768",
+        "residentCounts": "103",
+        "addressPopulation": "388",
+        "riskProperty": "3090",
+        "permanentPopulation": "388",
+        "housing": "416",
+        "username": "陈马娃",
+        "phone": 13772046178
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.793628,
+          33.990239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 66,
+        "disasterName": "沙场村十组天池寺以东(B4)",
+        "unitCode": "610116007005FX2004",
+        "position": "太乙宫街道沙场村",
+        "lon": "109.014238",
+        "lat": "34.026996",
+        "area": "0.118634841558",
+        "residentCounts": "18",
+        "addressPopulation": "51",
+        "riskProperty": "510",
+        "permanentPopulation": "51",
+        "housing": "29",
+        "username": "刘雪茶",
+        "phone": 15094026755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014238,
+          34.026996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 67,
+        "disasterName": "库峪河村七组 太沟(C13)",
+        "unitCode": "610116023006FX3013",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.162435",
+        "lat": "34.047055",
+        "area": "0.0530250902187",
+        "residentCounts": "1",
+        "addressPopulation": "9",
+        "riskProperty": "30",
+        "permanentPopulation": "9",
+        "housing": "6",
+        "username": "田锋",
+        "phone": 18066514846
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.162435,
+          34.047055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 68,
+        "disasterName": "龙渠村八组沟底巷(C2)",
+        "unitCode": "610116004013FX3002",
+        "position": "引镇街道龙渠村",
+        "lon": "109.116213",
+        "lat": "34.045785",
+        "area": "0.0409027544660715",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "4",
+        "username": "田华兵",
+        "phone": 13571937768
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.116213,
+          34.045785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 69,
+        "disasterName": "向阳村十组   1(C2)",
+        "unitCode": "610116017008FX3002",
+        "position": "鸣犊街道向阳村",
+        "lon": "109.109699",
+        "lat": "34.125103",
+        "area": "0.0899447403282052",
+        "residentCounts": "1",
+        "addressPopulation": "5",
+        "riskProperty": "30",
+        "permanentPopulation": "5",
+        "housing": "9",
+        "username": "强小锋",
+        "phone": 15829393454
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.109699,
+          34.125103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 70,
+        "disasterName": "喂子坪村鸡窝子组上鸡窝(B2)",
+        "unitCode": "610116003017FX2002",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.181197709785",
+        "residentCounts": "0",
+        "addressPopulation": "",
+        "riskProperty": "90",
+        "permanentPopulation": "",
+        "housing": "0",
+        "username": "陈海兵",
+        "phone": 13992869940
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 71,
+        "disasterName": "四皓村一、三、七组土台子(B1)",
+        "unitCode": "610116007007FX2001",
+        "position": "太乙宫街道四皓村",
+        "lon": "109.006812",
+        "lat": "34.021826",
+        "area": "0.491622009138078",
+        "residentCounts": "26",
+        "addressPopulation": "108",
+        "riskProperty": "780",
+        "permanentPopulation": "108",
+        "housing": "107",
+        "username": "刘卫刚",
+        "phone": 15389436408
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.006812,
+          34.021826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 72,
+        "disasterName": "郭村六组砖厂(C1)",
+        "unitCode": "610116017004FX3001",
+        "position": "鸣犊街道郭村",
+        "lon": "109.110843",
+        "lat": "34.152221",
+        "area": "0.202276506754521",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "5",
+        "username": "肖波",
+        "phone": 13002999944
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.110843,
+          34.152221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 73,
+        "disasterName": "光辉村十一组鲜峪口(C4)",
+        "unitCode": "610116004007FX3004",
+        "position": "引镇街道光辉村",
+        "lon": "109.085782",
+        "lat": "34.116236",
+        "area": "0.0784388657477",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "4",
+        "username": "陈志均",
+        "phone": 15384640835
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.085782,
+          34.116236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 74,
+        "disasterName": "喂子坪村北石槽组南石槽沟内(B7)",
+        "unitCode": "610116003017FX2007",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.08269903385246",
+        "residentCounts": "2",
+        "addressPopulation": "5",
+        "riskProperty": "60",
+        "permanentPopulation": "5",
+        "housing": "10",
+        "username": "王能友",
+        "phone": 15229030899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 75,
+        "disasterName": "老凹庄村十三组   南侧(B1)",
+        "unitCode": "610116025005FX2001",
+        "position": "魏寨街道老凹庄村",
+        "lon": "109.160098",
+        "lat": "34.108141",
+        "area": "0.203809018650804",
+        "residentCounts": "6",
+        "addressPopulation": "6",
+        "riskProperty": "180",
+        "permanentPopulation": "6",
+        "housing": "24",
+        "username": "李栋",
+        "phone": 13484408288
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.160098,
+          34.108141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 76,
+        "disasterName": "东台新村二组台沟(B3)",
+        "unitCode": "610116009006FX2003",
+        "position": "子午街道东台新村",
+        "lon": "108.903283",
+        "lat": "34.040319",
+        "area": "0.116705631663172",
+        "residentCounts": "4",
+        "addressPopulation": "11",
+        "riskProperty": "120",
+        "permanentPopulation": "11",
+        "housing": "16",
+        "username": "王魁",
+        "phone": 13484533465
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.903283,
+          34.040319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 77,
+        "disasterName": "沣峪口村一 组沣峪沟口(B5)",
+        "unitCode": "610116003007FX2005",
+        "position": "滦镇街道沣峪口村",
+        "lon": "108.813389",
+        "lat": "34.036124",
+        "area": "0.234526997856191",
+        "residentCounts": "1",
+        "addressPopulation": "12",
+        "riskProperty": "200",
+        "permanentPopulation": "12",
+        "housing": "24",
+        "username": "路倩",
+        "phone": 13571816606
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.813389,
+          34.036124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 78,
+        "disasterName": "双益湾村一组.  (C4)",
+        "unitCode": "610116007006FX3004",
+        "position": "太乙宫街道双益湾村",
+        "lon": "109.012796",
+        "lat": "34.048341",
+        "area": "0.0755721634233972",
+        "residentCounts": "3",
+        "addressPopulation": "9",
+        "riskProperty": "90",
+        "permanentPopulation": "8",
+        "housing": "12",
+        "username": "张俊峰",
+        "phone": 13468618288
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.012796,
+          34.048341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 79,
+        "disasterName": "江兆村八组焦后海家屋后(C12)",
+        "unitCode": "610116016232FX3002",
+        "position": "王曲街道江兆村",
+        "lon": "108.993907",
+        "lat": "34.052620",
+        "area": "0.0125045995572007",
+        "residentCounts": "2",
+        "addressPopulation": "2",
+        "riskProperty": "150",
+        "permanentPopulation": "2",
+        "housing": "18",
+        "username": "焦俊",
+        "phone": 17792377376
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.993907,
+          34.05262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 80,
+        "disasterName": "杨万村七组    1(B2)",
+        "unitCode": "610116012005FX2002",
+        "position": "杜曲街道杨万村",
+        "lon": "109.006352",
+        "lat": "34.105692",
+        "area": "0.400134626239976",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "9",
+        "username": "王养玲",
+        "phone": 18709287599
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.006352,
+          34.105692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 81,
+        "disasterName": "库峪河村十七组西木湾-红庙子村(B3)",
+        "unitCode": "610116023006FX2003",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.401001328761",
+        "residentCounts": "1",
+        "addressPopulation": "3",
+        "riskProperty": "30",
+        "permanentPopulation": "3",
+        "housing": "5",
+        "username": "侯小利",
+        "phone": 13289296039
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 82,
+        "disasterName": "沙场村十、十一组蛟峪山村(B6)",
+        "unitCode": "610116007005FX2006",
+        "position": "太乙宫街道沙场村",
+        "lon": "109.014238",
+        "lat": "34.026996",
+        "area": "0.621399912082216",
+        "residentCounts": "95",
+        "addressPopulation": "268",
+        "riskProperty": "2820",
+        "permanentPopulation": "268",
+        "housing": "360",
+        "username": "李小叶",
+        "phone": 13109593902
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014238,
+          34.026996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 83,
+        "disasterName": "彰仪村一组南头(B1)",
+        "unitCode": "610116012014FX2001",
+        "position": "杜曲街道彰仪村",
+        "lon": "109.014418",
+        "lat": "34.075678",
+        "area": "0.188426314675405",
+        "residentCounts": "13",
+        "addressPopulation": "48",
+        "riskProperty": "390",
+        "permanentPopulation": "47",
+        "housing": "36",
+        "username": "韩军",
+        "phone": 18991137404
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014418,
+          34.075678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 84,
+        "disasterName": "劳动村一组张跃民屋后(C11)",
+        "unitCode": "610116016231FX3002",
+        "position": "王曲街道劳动村",
+        "lon": "108.970855",
+        "lat": "34.047648",
+        "area": "0.00886794346615588",
+        "residentCounts": "5",
+        "addressPopulation": "16",
+        "riskProperty": "150",
+        "permanentPopulation": "16",
+        "housing": "40",
+        "username": "梁冠军",
+        "phone": 15991457394
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.970855,
+          34.047648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 85,
+        "disasterName": "百塔寺村一组抱龙峪沟口(B5)",
+        "unitCode": "610116009010FX2005",
+        "position": "子午街道百塔寺村",
+        "lon": "108.931609",
+        "lat": "34.034421",
+        "area": "0.27687818681",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "200",
+        "permanentPopulation": "0",
+        "housing": "20",
+        "username": "魏宇汉",
+        "phone": 17792758823
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.931609,
+          34.034421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 86,
+        "disasterName": "四坡村六组    1(B1)",
+        "unitCode": "610116017006FX2001",
+        "position": "鸣犊街道四坡村",
+        "lon": "109.109699",
+        "lat": "34.125103",
+        "area": "0.0811546854934121",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "9",
+        "username": "许养利",
+        "phone": 13572060189
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.109699,
+          34.125103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 87,
+        "disasterName": "光辉村十一组西翠花(B4)",
+        "unitCode": "610116004007FX2004",
+        "position": "引镇街道光辉村",
+        "lon": "109.085782",
+        "lat": "34.116236",
+        "area": "0.391901351713",
+        "residentCounts": "1",
+        "addressPopulation": "8",
+        "riskProperty": "30",
+        "permanentPopulation": "8",
+        "housing": "10",
+        "username": "陈志均",
+        "phone": 15384640835
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.085782,
+          34.116236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 88,
+        "disasterName": "西四府村一组   东北角(C1)",
+        "unitCode": "610116001008FX3001",
+        "position": "韦曲街道西四府村",
+        "lon": "108.963218",
+        "lat": "34.134366",
+        "area": "0.0861317394112404",
+        "residentCounts": "7",
+        "addressPopulation": "25",
+        "riskProperty": "210",
+        "permanentPopulation": "25",
+        "housing": "24",
+        "username": "杨兴",
+        "phone": 18292048000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.963218,
+          34.134366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 89,
+        "disasterName": "天王村三组嘉午台(C7)",
+        "unitCode": "610116004017FX3007",
+        "position": "引镇街道天王村",
+        "lon": "109.127163",
+        "lat": "34.090734",
+        "area": "0.0931481310603",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "3",
+        "username": "李永利",
+        "phone": 13991871375
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.127163,
+          34.090734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 90,
+        "disasterName": "兴教寺村十组   1(B3)",
+        "unitCode": "610116012007FX2003",
+        "position": "杜曲街道兴教寺村",
+        "lon": "109.033589",
+        "lat": "34.086372",
+        "area": "0.0787196570432473",
+        "residentCounts": "4",
+        "addressPopulation": "11",
+        "riskProperty": "120",
+        "permanentPopulation": "10",
+        "housing": "16",
+        "username": "姚喜峰",
+        "phone": 15202963699
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.033589,
+          34.086372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 91,
+        "disasterName": "喂子坪村青岗树组夭佛岩(B4)",
+        "unitCode": "610116003017FX2004",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.133932737799",
+        "residentCounts": "3",
+        "addressPopulation": "6",
+        "riskProperty": "60",
+        "permanentPopulation": "6",
+        "housing": "8",
+        "username": "闫峰涛",
+        "phone": 17792574130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 92,
+        "disasterName": "王曲村一组王三民家屋后(C5)",
+        "unitCode": "610116016200FX3001",
+        "position": "王曲街道王曲村",
+        "lon": "108.969846",
+        "lat": "34.076930",
+        "area": "0.00681675045651609",
+        "residentCounts": "8",
+        "addressPopulation": "25",
+        "riskProperty": "240",
+        "permanentPopulation": "25",
+        "housing": "29",
+        "username": "宋军利",
+        "phone": 13669182771
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.969846,
+          34.07693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 93,
+        "disasterName": "皇甫村二组刘来志家屋后(C4)",
+        "unitCode": "610116016218FX3003",
+        "position": "王曲街道皇甫村",
+        "lon": "108.953608",
+        "lat": "34.098036",
+        "area": "0.0108566721435709",
+        "residentCounts": "5",
+        "addressPopulation": "19",
+        "riskProperty": "150",
+        "permanentPopulation": "19",
+        "housing": "41",
+        "username": "刘小成",
+        "phone": 13991877872
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.953608,
+          34.098036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 94,
+        "disasterName": "高寨新村十四、十五组    1(C1)",
+        "unitCode": "610116017009FX3001",
+        "position": "鸣犊街道高寨新村",
+        "lon": "109.105423",
+        "lat": "34.096371",
+        "area": "0.0849032731517697",
+        "residentCounts": "4",
+        "addressPopulation": "12",
+        "riskProperty": "120",
+        "permanentPopulation": "12",
+        "housing": "15",
+        "username": "侯丁丁",
+        "phone": 13759989845
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.105423,
+          34.096371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 95,
+        "disasterName": "库峪河村十六组西木斯沟(C14)",
+        "unitCode": "610116023006FX3014",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.246830653182",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "4",
+        "username": "陈新利",
+        "phone": 18291883760
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 96,
+        "disasterName": "小峪口村十组小金坪(B2)",
+        "unitCode": "610116018013FX2002",
+        "position": "王莽街道小峪口村",
+        "lon": "109.075191",
+        "lat": "33.996601",
+        "area": "0.169595791592904",
+        "residentCounts": "2",
+        "addressPopulation": "7",
+        "riskProperty": "60",
+        "permanentPopulation": "7",
+        "housing": "8",
+        "username": "张涛",
+        "phone": 15339112221
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.075191,
+          33.996601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 97,
+        "disasterName": "库峪河村六组   太沟(B14)",
+        "unitCode": "610116023006FX2014",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.162435",
+        "lat": "34.047055",
+        "area": "0.0669757404919",
+        "residentCounts": "4",
+        "addressPopulation": "13",
+        "riskProperty": "120",
+        "permanentPopulation": "13",
+        "housing": "25",
+        "username": "刘宏娜",
+        "phone": 18729353949
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.162435,
+          34.047055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 98,
+        "disasterName": "沣峪口村二道桥组公路道班(C7)",
+        "unitCode": "610116003007FX3007",
+        "position": "滦镇街道沣峪口村",
+        "lon": "108.813389",
+        "lat": "34.036124",
+        "area": "0.194607134154",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "200",
+        "permanentPopulation": "2",
+        "housing": "4",
+        "username": "李小鹏",
+        "phone": 18991104880
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.813389,
+          34.036124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 99,
+        "disasterName": "东四府村一组长安一中西北侧(B1)",
+        "unitCode": "610116001009FX2001",
+        "position": "韦曲街道东四府村",
+        "lon": "108.964749",
+        "lat": "34.137320",
+        "area": "0.0802510819157857",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "1200",
+        "permanentPopulation": "0",
+        "housing": "200",
+        "username": "柴向阳",
+        "phone": 13991277257
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.964749,
+          34.13732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 100,
+        "disasterName": "韦兆南村八组   1(C4)",
+        "unitCode": "610116018011FX3004",
+        "position": "王莽街道韦兆南村",
+        "lon": "109.078960",
+        "lat": "34.068961",
+        "area": "0.120609309553916",
+        "residentCounts": "2",
+        "addressPopulation": "6",
+        "riskProperty": "60",
+        "permanentPopulation": "6",
+        "housing": "4",
+        "username": "张小花",
+        "phone": 13991875272
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.07896,
+          34.068961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 101,
+        "disasterName": "沙场村十一组二郎山(C8)",
+        "unitCode": "610116007005FX3008",
+        "position": "太乙宫街道沙场村",
+        "lon": "109.014238",
+        "lat": "34.026996",
+        "area": "0.0379478017322",
+        "residentCounts": "3",
+        "addressPopulation": "5",
+        "riskProperty": "30",
+        "permanentPopulation": "5",
+        "housing": "4",
+        "username": "李小叶",
+        "phone": 13109593902
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.014238,
+          34.026996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 102,
+        "disasterName": "彭村二组    蚕姑沟(B3)",
+        "unitCode": "610116025007FX2003",
+        "position": "魏寨街道彭村",
+        "lon": "109.145281",
+        "lat": "34.114086",
+        "area": "0.309711967184472",
+        "residentCounts": "19",
+        "addressPopulation": "77",
+        "riskProperty": "570",
+        "permanentPopulation": "77",
+        "housing": "80",
+        "username": "李东红",
+        "phone": 18740420271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.145281,
+          34.114086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 103,
+        "disasterName": "沣峪村佘家湾组红草河上游(B9)",
+        "unitCode": "610116003006FX2009",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.126309092347504",
+        "residentCounts": "15",
+        "addressPopulation": "33",
+        "riskProperty": "210",
+        "permanentPopulation": "33",
+        "housing": "13",
+        "username": "王苗",
+        "phone": 13772138969
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 104,
+        "disasterName": "黎明村一组   1(C1)",
+        "unitCode": "610116017014FX3001",
+        "position": "鸣犊街道黎明村",
+        "lon": "109.121407",
+        "lat": "34.098551",
+        "area": "0.0953869390659685",
+        "residentCounts": "4",
+        "addressPopulation": "10",
+        "riskProperty": "120",
+        "permanentPopulation": "10",
+        "housing": "12",
+        "username": "惠建军",
+        "phone": 17392260582
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.121407,
+          34.098551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 105,
+        "disasterName": "马厂村九组裴瑞红家屋后(B2)",
+        "unitCode": "610116016228FX2001",
+        "position": "王曲街道马厂村",
+        "lon": "108.986106",
+        "lat": "34.083667",
+        "area": "0.00283062345705408",
+        "residentCounts": "4",
+        "addressPopulation": "16",
+        "riskProperty": "120",
+        "permanentPopulation": "16",
+        "housing": "4",
+        "username": "辛茹",
+        "phone": 15353733875
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.986106,
+          34.083667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 106,
+        "disasterName": "三友村七组三联村(B1)",
+        "unitCode": "610116013010FX2001",
+        "position": "大兆街道三友村",
+        "lon": "109.085019",
+        "lat": "34.144710",
+        "area": "0.152525076654873",
+        "residentCounts": "3",
+        "addressPopulation": "12",
+        "riskProperty": "90",
+        "permanentPopulation": "12",
+        "housing": "15",
+        "username": "王利军",
+        "phone": 15319425419
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.085019,
+          34.14471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 107,
+        "disasterName": "喂子坪村大坪组大坪(B10)",
+        "unitCode": "610116003017FX3005",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.194847780029",
+        "residentCounts": "10",
+        "addressPopulation": "29",
+        "riskProperty": "90",
+        "permanentPopulation": "29",
+        "housing": "3",
+        "username": "李春季",
+        "phone": 18066733276
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 108,
+        "disasterName": "江兆村八组范丽家屋后(C13)",
+        "unitCode": "610116016232FX3003",
+        "position": "王曲街道江兆村",
+        "lon": "108.993907",
+        "lat": "34.052620",
+        "area": "0.00259598782370027",
+        "residentCounts": "2",
+        "addressPopulation": "2",
+        "riskProperty": "60",
+        "permanentPopulation": "2",
+        "housing": "10",
+        "username": "焦成涛",
+        "phone": 18991267329
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.993907,
+          34.05262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 109,
+        "disasterName": "嘉午台村九组太平村(C4)",
+        "unitCode": "610116004012FX3004",
+        "position": "引镇街道嘉午台村",
+        "lon": "109.096052",
+        "lat": "33.986142",
+        "area": "0.087153510757802",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "4",
+        "username": "张卜",
+        "phone": 15929322399
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.096052,
+          33.986142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 110,
+        "disasterName": "小峪口村九组    1(B1)",
+        "unitCode": "610116018013FX2001",
+        "position": "王莽街道小峪口村",
+        "lon": "109.075191",
+        "lat": "33.996601",
+        "area": "0.363140330837",
+        "residentCounts": "9",
+        "addressPopulation": "29",
+        "riskProperty": "270",
+        "permanentPopulation": "29",
+        "housing": "27",
+        "username": "胡小红",
+        "phone": 18049572413
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.075191,
+          33.996601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 111,
+        "disasterName": "喂子坪村三组喂子坪小学(B14)",
+        "unitCode": "610116003017FX2014",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.483584425916",
+        "residentCounts": "61",
+        "addressPopulation": "192",
+        "riskProperty": "1530",
+        "permanentPopulation": "192",
+        "housing": "198",
+        "username": "谷小军",
+        "phone": 13759935663
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 112,
+        "disasterName": "东高村八、九组1     (B1)",
+        "unitCode": "610116017012FX2001",
+        "position": "鸣犊街道东高村",
+        "lon": "109.108529",
+        "lat": "34.130373",
+        "area": "0.156887708264556",
+        "residentCounts": "4",
+        "addressPopulation": "20",
+        "riskProperty": "300",
+        "permanentPopulation": "19",
+        "housing": "36",
+        "username": "董建军",
+        "phone": 18740404995
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.108529,
+          34.130373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 113,
+        "disasterName": "东祥村十组高山流水别墅区(B2)",
+        "unitCode": "610116008003FX2002",
+        "position": "东大街道东祥村",
+        "lon": "108.899798",
+        "lat": "34.089918",
+        "area": "0.178307219105132",
+        "residentCounts": "12",
+        "addressPopulation": "12",
+        "riskProperty": "500",
+        "permanentPopulation": "12",
+        "housing": "50",
+        "username": "刘大锁",
+        "phone": 13659202755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.899798,
+          34.089918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 114,
+        "disasterName": "大峪新村十组郑家坡(B3)",
+        "unitCode": "610116004002FX2003",
+        "position": "引镇街道大峪新村",
+        "lon": "109.118702",
+        "lat": "34.002722",
+        "area": "0.202810185659381",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "10",
+        "username": "夏和平",
+        "phone": 13571818640
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.118702,
+          34.002722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 115,
+        "disasterName": "喂子坪村北石槽组南石槽(B8)",
+        "unitCode": "610116003017FX2008",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.041503970216",
+        "residentCounts": "1",
+        "addressPopulation": "5",
+        "riskProperty": "30",
+        "permanentPopulation": "5",
+        "housing": "5",
+        "username": "王能友",
+        "phone": 15229030899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 116,
+        "disasterName": "东尧村一组水厂  (B1)",
+        "unitCode": "610116019002FX2001",
+        "position": "五台街道东尧村",
+        "lon": "108.956337",
+        "lat": "34.027945",
+        "area": "0.0598136786800911",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "200",
+        "permanentPopulation": "0",
+        "housing": "4",
+        "username": "谢军",
+        "phone": 13892890866
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.956337,
+          34.027945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 117,
+        "disasterName": "喂子坪村松花沟村组公路超限检测站(C6)",
+        "unitCode": "610116003017FX3006",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845951",
+        "lat": "33.963998",
+        "area": "0.0889727090379",
+        "residentCounts": "1",
+        "addressPopulation": "16",
+        "riskProperty": "100",
+        "permanentPopulation": "16",
+        "housing": "17",
+        "username": "陈海兵",
+        "phone": 13992869940
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845951,
+          33.963998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 118,
+        "disasterName": "沣峪村大门村组红草河以东(B3)",
+        "unitCode": "610116003006FX2003",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "2.14508811623155",
+        "residentCounts": "172",
+        "addressPopulation": "596",
+        "riskProperty": "4200",
+        "permanentPopulation": "596",
+        "housing": "590",
+        "username": "佘政军",
+        "phone": 13572267811
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 119,
+        "disasterName": "光辉村十一组新贯寺(B2)",
+        "unitCode": "610116004007FX2002",
+        "position": "引镇街道光辉村",
+        "lon": "109.085782",
+        "lat": "34.116236",
+        "area": "0.235705252789648",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "3",
+        "username": "陈志均",
+        "phone": 15384640835
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.085782,
+          34.116236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 120,
+        "disasterName": "喂子坪村关坪寺组雨蒙农家院南(B12)",
+        "unitCode": "610116003017FX2012",
+        "position": "滦镇街道喂子坪村",
+        "lon": "108.845325",
+        "lat": "33.963569",
+        "area": "0.0330716510315",
+        "residentCounts": "1",
+        "addressPopulation": "2",
+        "riskProperty": "30",
+        "permanentPopulation": "2",
+        "housing": "4",
+        "username": "王群",
+        "phone": 15309272921
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.845325,
+          33.963569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 121,
+        "disasterName": "库峪河村十五组西木斯村(B6)",
+        "unitCode": "610116023006FX2006",
+        "position": "杨庄街道库峪河村",
+        "lon": "109.173148",
+        "lat": "33.991909",
+        "area": "0.118365176327018",
+        "residentCounts": "2",
+        "addressPopulation": "8",
+        "riskProperty": "60",
+        "permanentPopulation": "8",
+        "housing": "8",
+        "username": "高治兵",
+        "phone": 17691134018
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.173148,
+          33.991909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 122,
+        "disasterName": "新二村五组提香溪谷(B2)",
+        "unitCode": "610116003023FX2002",
+        "position": "滦镇街道新二村",
+        "lon": "108.830020",
+        "lat": "34.055679",
+        "area": "0.277523035592",
+        "residentCounts": "9",
+        "addressPopulation": "18",
+        "riskProperty": "240",
+        "permanentPopulation": "18",
+        "housing": "48",
+        "username": "白朋飞",
+        "phone": 15771782119
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.83002,
+          34.055679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 123,
+        "disasterName": "祥峪村国岭别墅区组粟原西北侧(C8)",
+        "unitCode": "610116008011FX3008",
+        "position": "东大街道祥峪村",
+        "lon": "108.793628",
+        "lat": "33.990239",
+        "area": "0.0654107954806638",
+        "residentCounts": "6",
+        "addressPopulation": "7",
+        "riskProperty": "600",
+        "permanentPopulation": "7",
+        "housing": "60",
+        "username": "吴春强",
+        "phone": 18165157763
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.793628,
+          33.990239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 124,
+        "disasterName": "江兆村八组辛平家屋后(B3)",
+        "unitCode": "610116016232FX2001",
+        "position": "王曲街道江兆村",
+        "lon": "108.940990",
+        "lat": "34.105869",
+        "area": "0.0139113421371201",
+        "residentCounts": "11",
+        "addressPopulation": "21",
+        "riskProperty": "330",
+        "permanentPopulation": "21",
+        "housing": "11",
+        "username": "辛荣安",
+        "phone": 13259789870
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.94099,
+          34.105869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 125,
+        "disasterName": "上王村六组翠微宫园(C2)",
+        "unitCode": "610116003014FX3002",
+        "position": "滦镇街道上王村",
+        "lon": "108.838888",
+        "lat": "34.049652",
+        "area": "0.225690268797",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "1000",
+        "permanentPopulation": "0",
+        "housing": "35",
+        "username": "王民",
+        "phone": 18165272376
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.838888,
+          34.049652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 126,
+        "disasterName": "百塔寺村三组王化沟(C8)",
+        "unitCode": "610116009010FX3008",
+        "position": "子午街道百塔寺村",
+        "lon": "108.931609",
+        "lat": "34.034421",
+        "area": "0.157327462088",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "30",
+        "permanentPopulation": "1",
+        "housing": "4",
+        "username": "罗昌武",
+        "phone": 18092706538
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.931609,
+          34.034421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 127,
+        "disasterName": "东祥村三组石佛寺(C1)",
+        "unitCode": "610116008003FX3001",
+        "position": "东大街道东祥村",
+        "lon": "108.793394",
+        "lat": "34.035803",
+        "area": "0.20592621076",
+        "residentCounts": "1",
+        "addressPopulation": "1",
+        "riskProperty": "100",
+        "permanentPopulation": "1",
+        "housing": "10",
+        "username": "冯建荣",
+        "phone": 13991233100
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.793394,
+          34.035803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 128,
+        "disasterName": "沣峪林场鸡窝子组张家坪(B5)",
+        "unitCode": "610116003101FX2005",
+        "position": "滦镇街道沣峪林场",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.0543153743282",
+        "residentCounts": "9",
+        "addressPopulation": "9",
+        "riskProperty": "270",
+        "permanentPopulation": "0",
+        "housing": "9",
+        "username": "高永刚",
+        "phone": 18049403857
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 129,
+        "disasterName": "汪峪村四、五组冷水沟-东斜坡(B3)",
+        "unitCode": "610116023010FX2003",
+        "position": "杨庄街道汪峪村",
+        "lon": "109.145111",
+        "lat": "34.041190",
+        "area": "0.480717499674",
+        "residentCounts": "2",
+        "addressPopulation": "5",
+        "riskProperty": "60",
+        "permanentPopulation": "5",
+        "housing": "2",
+        "username": "李新羊",
+        "phone": 15029143011
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.145111,
+          34.04119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 130,
+        "disasterName": "内苑村纬九组动物园-翠微寺-秦岭山水别墅区(C3)",
+        "unitCode": "610116003010FX3003",
+        "position": "滦镇街道内苑村",
+        "lon": "108.861707",
+        "lat": "34.056327",
+        "area": "0.794303605189",
+        "residentCounts": "8",
+        "addressPopulation": "8",
+        "riskProperty": "800",
+        "permanentPopulation": "8",
+        "housing": "80",
+        "username": "任军朋",
+        "phone": 13468814777
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.861707,
+          34.056327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 131,
+        "disasterName": "沣峪村枣岭组砭子口(B4)",
+        "unitCode": "610116003006FX2004",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.466899986106",
+        "residentCounts": "42",
+        "addressPopulation": "149",
+        "riskProperty": "1620",
+        "permanentPopulation": "149",
+        "housing": "230",
+        "username": "薛利锋",
+        "phone": 13402953337
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 132,
+        "disasterName": "沣峪村石峡沟组原石峡沟村(B6)",
+        "unitCode": "610116003006FX2006",
+        "position": "滦镇街道沣峪村",
+        "lon": "108.817912",
+        "lat": "34.044828",
+        "area": "0.535959322351",
+        "residentCounts": "53",
+        "addressPopulation": "207",
+        "riskProperty": "1740",
+        "permanentPopulation": "207",
+        "housing": "197",
+        "username": "彭寿坤",
+        "phone": 15319485101
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.817912,
+          34.044828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 133,
+        "disasterName": "藏龙寨村二组孙涛家屋后(C9)",
+        "unitCode": "610116016230FX3002",
+        "position": "王曲街道藏龙寨村",
+        "lon": "108.972712",
+        "lat": "34.065414",
+        "area": "0.0100329684978236",
+        "residentCounts": "1",
+        "addressPopulation": "4",
+        "riskProperty": "30",
+        "permanentPopulation": "4",
+        "housing": "16",
+        "username": "徐来民",
+        "phone": 13201604815
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.972712,
+          34.065414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 134,
+        "disasterName": "双竹村三组    纪念塔(B2)",
+        "unitCode": "610116001007FX2002",
+        "position": "韦曲街道双竹村",
+        "lon": "108.955355",
+        "lat": "34.143347",
+        "area": "0.112505953628534",
+        "residentCounts": "8",
+        "addressPopulation": "32",
+        "riskProperty": "240",
+        "permanentPopulation": "32",
+        "housing": "28",
+        "username": "郭红宾",
+        "phone": 18092578024
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.955355,
+          34.143347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 135,
+        "disasterName": "太乙村翠华山组景区博物馆(C9)",
+        "unitCode": "610116007008FX3009",
+        "position": "太乙宫街道太乙村",
+        "lon": "109.006233",
+        "lat": "34.016204",
+        "area": "0.0725056700279",
+        "residentCounts": "1",
+        "addressPopulation": "0",
+        "riskProperty": "1000",
+        "permanentPopulation": "0",
+        "housing": "20",
+        "username": "田卫乐",
+        "phone": 13488111121
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.006233,
+          34.016204
+        ]
+      }
+    }
+  ]
+}

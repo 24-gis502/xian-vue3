@@ -1,0 +1,533 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 44,
+        "fieldCode": "CA143",
+        "disasterName": "石峡沟村滑坡",
+        "经度": "108°50′6.28″",
+        "纬度": "33°59′14.28″",
+        "lon": "108.83508",
+        "lat": "33.9873",
+        "position": "长安区滦镇街道沣峪村石峡沟村",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.83508,
+          33.9873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 45,
+        "fieldCode": "CA021",
+        "disasterName": "黄土坡滑坡",
+        "经度": "109°5′59.0″",
+        "纬度": "34°3′16.0″",
+        "lon": "109.09972",
+        "lat": "34.05444",
+        "position": "引镇街道黄土坡村四组",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.09972,
+          34.05444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 46,
+        "fieldCode": "CA056",
+        "disasterName": "北石槽滑坡",
+        "经度": "108°51′31.0″",
+        "纬度": "33°54′58.0″",
+        "lon": "108.85861",
+        "lat": "33.91611",
+        "position": "长安区滦镇街道喂子坪村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.85861,
+          33.91611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 47,
+        "fieldCode": "CA057",
+        "disasterName": "铁铺滑坡",
+        "经度": "108° 53′ 24.7″",
+        "纬度": "33° 58′ 10.91″",
+        "lon": "108.89019",
+        "lat": "33.9697",
+        "position": "长安区滦镇街道沣峪村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.89019,
+          33.9697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 48,
+        "fieldCode": "CA072",
+        "disasterName": "华严寺滑坡",
+        "经度": "108°57′58.3″",
+        "纬度": "34°8′12.5″",
+        "lon": "108.96619",
+        "lat": "34.13681",
+        "position": "长安区韦曲街道局连村",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.96619,
+          34.13681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 49,
+        "fieldCode": "CA075",
+        "disasterName": "双竹村滑坡",
+        "经度": "108°57′3.0″",
+        "纬度": "34°8′45.0″",
+        "lon": "108.95083",
+        "lat": "34.14583",
+        "position": "长安区韦曲街道双竹村",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "中型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.95083,
+          34.14583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 50,
+        "fieldCode": "CA092",
+        "disasterName": "大门村滑坡",
+        "经度": "108°52′10.866″",
+        "纬度": "33°58′12.046″",
+        "lon": "108.86969",
+        "lat": "33.97001",
+        "position": "长安区滦镇街道沣峪村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.86969,
+          33.97001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 51,
+        "fieldCode": "CA101",
+        "disasterName": "抱龙峪滑坡",
+        "经度": "108°53′23.0″",
+        "纬度": "34°0′31.0″",
+        "lon": "108.88972",
+        "lat": "34.00861",
+        "position": "长安区子午街道抱龙村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.88972,
+          34.00861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 52,
+        "fieldCode": "CA102",
+        "disasterName": "太乙村滑坡",
+        "经度": "109°0′5.0″",
+        "纬度": "34°0′48.0″",
+        "lon": "109.00139",
+        "lat": "34.01333",
+        "position": "长安区太乙宫街道太乙村",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.00139,
+          34.01333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 53,
+        "fieldCode": "CA103",
+        "disasterName": "赵明田家东侧滑坡",
+        "经度": "109°0′7.0″",
+        "纬度": "34°0′43.0″",
+        "lon": "109.00194",
+        "lat": "34.01194",
+        "position": "长安区太乙宫街道太乙村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.00194,
+          34.01194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 54,
+        "fieldCode": "CA109",
+        "disasterName": "唐拴虎家滑坡",
+        "经度": "108°55′21.0″",
+        "纬度": "34°1′29.0″",
+        "lon": "108.9225",
+        "lat": "34.02472",
+        "position": "长安区子午街道百塔寺村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9225,
+          34.02472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 55,
+        "fieldCode": "CA112",
+        "disasterName": "长安一中滑坡",
+        "经度": "108°57′40.0″",
+        "纬度": "34°8′24.0″",
+        "lon": "108.96111",
+        "lat": "34.14",
+        "position": "长安区韦曲街道长安一中新教学楼北侧",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "特大型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.96111,
+          34.14
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 56,
+        "fieldCode": "CA128",
+        "disasterName": "杏园村二组滑坡",
+        "经度": "109°0′24.0″",
+        "纬度": "34°0′1.0″",
+        "lon": "109.00667",
+        "lat": "34.00028",
+        "position": "陕西省长安区太乙宫街道太乙村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.00667,
+          34.00028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 57,
+        "fieldCode": "CA069",
+        "disasterName": "皇甫村滑坡",
+        "经度": "108°57′29.0″",
+        "纬度": "34°5′32.0″",
+        "lon": "108.95806",
+        "lat": "34.09222",
+        "position": "长安区王曲街道皇甫村三、四、五组",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "中型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.95806,
+          34.09222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 58,
+        "fieldCode": "CA129",
+        "disasterName": "西岔村一组滑坡",
+        "经度": "108°59′50.0″",
+        "纬度": "34°0′10.0″",
+        "lon": "108.99722",
+        "lat": "34.00278",
+        "position": "长安区太乙宫街道太乙村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.99722,
+          34.00278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 59,
+        "fieldCode": "CA028",
+        "disasterName": "土门峪村三组滑坡",
+        "经度": "109°2′8.0″",
+        "纬度": "34°1′17.0″",
+        "lon": "109.03556",
+        "lat": "34.02139",
+        "position": "长安区王莽街道土门峪村三组",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.03556,
+          34.02139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 60,
+        "fieldCode": "CA032",
+        "disasterName": "郑家坡滑坡",
+        "经度": "109°3′53.0″",
+        "纬度": "34°0′60.0″",
+        "lon": "109.06472",
+        "lat": "34.01667",
+        "position": "长安区王莽街道小峪口村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.06472,
+          34.01667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 61,
+        "fieldCode": "CA017",
+        "disasterName": "十里庙滑坡",
+        "经度": "109° 9′ 54.16″",
+        "纬度": "33° 58′ 29.96″",
+        "lon": "109.16504",
+        "lat": "33.97499",
+        "position": "长安区杨庄街道十里庙村七组",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.16504,
+          33.97499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 62,
+        "fieldCode": "CA090",
+        "disasterName": "凤翔沟滑坡",
+        "经度": "109°8′44.631″",
+        "纬度": "34°0′49.863″",
+        "lon": "109.14573",
+        "lat": "34.01385",
+        "position": "长安区杨庄街道凤翔沟村",
+        "disasterType": "滑坡",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.14573,
+          34.01385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 63,
+        "fieldCode": "CA099",
+        "disasterName": "凤翔沟滑坡",
+        "经度": "109°8′43.279″",
+        "纬度": "34°0′50.957″",
+        "lon": "109.14536",
+        "lat": "34.01415",
+        "position": "长安区杨庄街道凤翔沟村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.14536,
+          34.01415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 64,
+        "fieldCode": "CA126",
+        "disasterName": "十里庙三组滑坡",
+        "经度": "109° 9′ 49.01″",
+        "纬度": "33° 59′ 41.83″",
+        "lon": "109.16361",
+        "lat": "33.99495",
+        "position": "陕西省长安区杨庄街道库峪河村",
+        "disasterType": "滑坡",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.16361,
+          33.99495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 65,
+        "fieldCode": "CA003",
+        "disasterName": "向阳水库滑坡",
+        "经度": "109°8′12.0″",
+        "纬度": "34°10′36.0″",
+        "lon": "109.13667",
+        "lat": "34.17667",
+        "position": "长安区炮里街道炮里村",
+        "disasterType": "滑坡",
+        "scaleGrade": "大型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.13667,
+          34.17667
+        ]
+      }
+    }
+  ]
+}

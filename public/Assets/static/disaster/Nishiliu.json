@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 2,
+        "fieldCode": "CA145",
+        "disasterName": "喂子坪村芋圆沟泥石流",
+        "经度": "108°50′36.6″",
+        "纬度": "33°56′12.12″",
+        "lon": "108.8435",
+        "lat": "33.9367",
+        "position": "长安区滦镇喂子坪村芋园沟",
+        "disasterType": "泥石流",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8435,
+          33.9367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 3,
+        "fieldCode": "CA144",
+        "disasterName": "小峪口村岩桥沟门泥石流",
+        "经度": "109°3′50.86″",
+        "纬度": "33°58′17.4″",
+        "lon": "109.06413",
+        "lat": "33.9715",
+        "position": "长安区王莽小峪口村",
+        "disasterType": "泥石流",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.06413,
+          33.9715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 4,
+        "fieldCode": "CA054",
+        "disasterName": "沣峪河上段泥石流",
+        "经度": "108° 50′ 53.6″",
+        "纬度": "33° 53′ 45.58″",
+        "lon": "108.84822",
+        "lat": "33.89599",
+        "position": "长安区滦镇街道青岗树村",
+        "disasterType": "泥石流",
+        "scaleGrade": "中型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.84822,
+          33.89599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SmUserID": 0,
+        "SmUserID_1": 5,
+        "fieldCode": "CA088",
+        "disasterName": "抱龙峪泥石流",
+        "经度": "108° 53′ 36.1″",
+        "纬度": "34° 0′ 47.247″",
+        "lon": "108.89336",
+        "lat": "34.01312",
+        "position": "长安区子午街道抱龙村",
+        "disasterType": "泥石流",
+        "scaleGrade": "小型",
+        "riskGrade": "小型"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.89336,
+          34.01312
+        ]
+      }
+    }
+  ]
+}
