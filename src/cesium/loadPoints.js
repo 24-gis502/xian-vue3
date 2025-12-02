@@ -41,14 +41,12 @@ import {
 // 引入接口
 import {dataOnHiddenDangerPointsOfDebrisFlow, landslideHazardPointData, riskVillageData,} from "@/api/earthquake/datas";
 import {ref} from "vue";
-
-
 const loadPoints = {
 
-    viewer: null,
-    setViewer(viewer) {
-        this.viewer = viewer;
-    },
+    // viewer: null,
+    // setViewer(viewer) {
+    //     this.viewer = viewer;
+    // },
 
     // 原配置: geoUrl: '/geoserver/xian/wms'
     geoUrl: '/geo', // 代理会处理路径重写，只需保留基础路径
@@ -77,6 +75,8 @@ const loadPoints = {
     subwayEntities: [], //地铁
     reservoirEntities: [], //
     bridgeEntities: [], //桥梁
+    //光晕清理函数数组
+    pulseCleanupFunctions: [], //存储光晕的清理函数
     //点数组
     landslidePoints: [],//滑坡点
     nishiliuPoints: [],//泥石流点
@@ -343,7 +343,7 @@ const loadPoints = {
     //添加图层
     addLayers(name) {
         // 根据用户提供的有效GeoServer WMS服务URL配置
-        return this.viewer.imageryLayers.addImageryProvider(
+        return window.viewer.imageryLayers.addImageryProvider(
             new Cesium.WebMapServiceImageryProvider({
                 url: `${this.geoUrl}/geoserver/xian/wms`,
                 layers: name,
@@ -374,7 +374,7 @@ const loadPoints = {
                     FaultZone.push(Number(point))
                 })
             })
-            this.viewer.entities.add({
+            window.viewer.entities.add({
                 name: "断裂带",
                 polyline: {
                     positions: Cesium.Cartesian3.fromDegreesArray(FaultZone),
@@ -389,20 +389,20 @@ const loadPoints = {
                     distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0),
                     // 是否显示
                     show: true,
-                    heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                    // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
                 },
             })
         })
     },
     //移除断裂带
     removeFaultZone() {
-        let toRemove = this.viewer.entities.values.filter(
+        let toRemove = window.viewer.entities.values.filter(
             e => e.name === '断裂带'
         );
         if (toRemove) {
             // 2. 逐个删除
             toRemove.forEach(entity => {
-                this.viewer.entities.remove(entity);
+                window.viewer.entities.remove(entity);
             });
         }
     },
@@ -420,7 +420,7 @@ const loadPoints = {
             }else{
                 entityId = type + hiddenDangerPoint.geologicalDisasterHideDTO.id;
             }
-            const entity = this.viewer.entities.add({
+            const entity = window.viewer.entities.add({
                 name: type,
                 id: entityId,
                 position: Cesium.Cartesian3.fromDegrees(lon,lat),
@@ -428,15 +428,14 @@ const loadPoints = {
                     image: imageEntity,
                     width: 40,
                     height: 40,
-                    eyeOffset: new Cesium.Cartesian3(0, 0, 0),  // 与坐标位置的偏移距离
+                    eyeOffset: new Cesium.Cartesian3(0, 0, 10),  // z轴偏移10个单位，确保在光晕上方
                     color: Cesium.Color.WHITE.withAlpha(1),      // 固定颜色
                     scale: 0.8,                                  // 缩放比例
-                    heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,// 贴地显示（跟随地形）
+                    // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,// 贴地显示（跟随地形）
                     scaleByDistance: new Cesium.NearFarScalar(500, 1, 5e5, 0.1),
-                    depthTest: true, // 禁止深度测试
-                    disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试
+                    disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试，避免被光晕遮挡
                     show: true,
-                    zIndex: 100,
+                    zIndex: 200, // 提高层级，确保在光晕上方
                 },
                 disasterData: hiddenDangerPoint,
                 properties: {
@@ -465,33 +464,26 @@ const loadPoints = {
               points.push([longitude,latitude])
 
               //创建实体
-              const entity = this.viewer.entities.add({
-                  position: Cesium.Cartesian3.fromDegrees(longitude, latitude, 5), // 贴地时高度参数无效，可省略
+              const entity = window.viewer.entities.add({
+                  position: Cesium.Cartesian3.fromDegrees(longitude, latitude), // 贴地显示
                   id: point.properties.id,
                   // 修正：将ellipse改为billboard（广告牌是Cesium中显示2D图标的标准方式）
                   billboard: {
                       image: icon, // 图标路径
                       width: 40, // 图片宽度
                       height: 40, // 图片高度
-                      // 关键：视觉偏移（z轴正值向上），确保在脉冲上方（可根据需求调整）
-                      eyeOffset: new Cesium.Cartesian3(0, 0, 10), // z轴偏移10个单位，视觉上更靠上
                       // 固定颜色
                       color: Cesium.Color.WHITE.withAlpha(1),
                       scale: 0.8, // 缩放比例
-                      // 核心：zIndex远大于脉冲的5，确保层级优先
-                      // 贴地配置
-                      // clampToGround: true,
-                      // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
                       // 缩放距离控制（与脉冲保持一致）
                       scaleByDistance: new Cesium.NearFarScalar(500, 1, 5e5, 0.1),
                       // 禁用深度测试，避免被地形/脉冲遮挡
-                      // depthTest: false,
                       disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试
-                      // 中心对齐（与脉冲保持一致）
+                      // 中心对齐
                       verticalOrigin: Cesium.VerticalOrigin.CENTER,
-                      heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // 绑定到地形高度
+                      // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // 贴地显示
                       horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
-                      zIndex: 200,
+                      zIndex: 200, // 高zIndex，确保在光晕上方（光晕的zIndex是0）
                       show: true,
                   },
                   originalColor: Cesium.Color.RED,
@@ -541,7 +533,7 @@ const loadPoints = {
 
     //加载单独点
    loadPoint(type, data, icon){
-        const entity = this.viewer.entities.add({
+        const entity = window.viewer.entities.add({
             position: Cesium.Cartesian3.fromDegrees(data.geometry.coordinates[0], data.geometry.coordinates[1],5),
             // 点
             billboard: {
@@ -549,16 +541,13 @@ const loadPoints = {
                 image: icon,
                 width: 40, // 图片宽度,单位px
                 height: 40, // 图片高度，单位px
-                eyeOffset: new Cesium.Cartesian3(0, 0, 0), // 与坐标位置的偏移距离
+                eyeOffset: new Cesium.Cartesian3(0, 0, 10), // z轴偏移10个单位，确保在光晕上方
                 color: Cesium.Color.WHITE.withAlpha(1), // 固定颜色
                 scale: 0.8, // 缩放比例
-                zIndex: 100,          // 比烈度圈大即可
-                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // 绑定到地形高度
+                // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // 绑定到地形高度
                 scaleByDistance: new Cesium.NearFarScalar(500, 1, 5e5, 0.1),
-                depthTest: false, // 禁止深度测试
-                disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试
+                disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试，避免被光晕遮挡
                 show: true,
-
             },
             originalColor: Cesium.Color.RED,
             originalPixelSize: 15,
@@ -568,8 +557,8 @@ const loadPoints = {
         });
     },
     //绘制图片的公共方法
-    async DrawIcon(type, item ,Icon){
-        this.viewer.entities.add({
+    async loadIcon(type, item ,Icon){
+        window.viewer.entities.add({
             name: type,
             position: Cesium.Cartesian3.fromDegrees(item.lon, item.lat),
             billboard: {
@@ -577,15 +566,14 @@ const loadPoints = {
                 image: Icon,
                 width: 50, // 图片宽度,单位px
                 height: 50, // 图片高度，单位px
-                eyeOffset: new Cesium.Cartesian3(0, 0, 0), // 与坐标位置的偏移距离
+                eyeOffset: new Cesium.Cartesian3(0, 0, 10), // z轴偏移10个单位，确保在光晕上方
                 color: Cesium.Color.WHITE.withAlpha(1), // 固定颜色
                 scale: 0.8, // 缩放比例
                 heightReference: Cesium.HeightReference.CLAMP_TO_GROUND, // 绑定到地形高度
                 scaleByDistance: new Cesium.NearFarScalar(500, 1, 5e5, 0.1),
-                // depthTest: false, // 禁止深度测试
-                disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试
+                disableDepthTestDistance: Number.POSITIVE_INFINITY, // 不进行深度测试，避免被光晕遮挡
                 show: true,
-                zIndex: 100,
+                zIndex: 2000, // 提高层级，确保在光晕上方
             },
             disasterData: item,
             properties: {
@@ -605,12 +593,12 @@ const loadPoints = {
     setupClickHandler() {
         if (this.clickHandler) this.clickHandler.destroy(); // 避免重复创建
 
-        this.clickHandler = new Cesium.ScreenSpaceEventHandler(this.viewer.scene.canvas);
+        this.clickHandler = new Cesium.ScreenSpaceEventHandler(window.viewer.scene.canvas);
         this.clickHandler.setInputAction((movement) => {
-            const picked = this.viewer.scene.pick(movement.position);
+            const picked = window.viewer.scene.pick(movement.position);
             if (Cesium.defined(picked) && picked.id && picked.id.entity) {
                 const entity = picked.id.entity;
-                this.viewer.flyTo(entity, {
+                window.viewer.flyTo(entity, {
                     duration: 2,
                     offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-45), 50000)
                 });
@@ -620,7 +608,7 @@ const loadPoints = {
     },
 
     showHiddenEntity(type) {
-        let toRemove = this.viewer.entities.values.filter(
+        let toRemove = window.viewer.entities.values.filter(
             e => e.name === type
         );
         if (toRemove?.length > 0) {
@@ -630,7 +618,7 @@ const loadPoints = {
         }
     },
     hideHiddenEntity(type) {
-        let toRemove = this.viewer.entities.values.filter(
+        let toRemove = window.viewer.entities.values.filter(
             e => e.name === type
         );
         // console.log(toRemove,type,"hideHiddenEntity")
@@ -641,7 +629,7 @@ const loadPoints = {
         }
     },
     removeHiddenEntity() {
-        this.viewer.entities.removeAll();
+        window.viewer.entities.removeAll();
     },
 
 

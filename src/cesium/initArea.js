@@ -17,11 +17,11 @@ import ZhouZhi from '@/assets/static/area/ZhouZhi.json';
 
 
 const initArea = {
-    viewer: null,
-    setViewer(viewer) {
-        this.viewer = viewer;
-        window.viewer = viewer;
-    },
+    // viewer: null,
+    // setViewer(viewer) {
+    //     // this.viewer = viewer;
+    //     window.viewer = viewer;
+    // },
     // 内部状态变量
     administrationData: [BaQiaoArea, BeiLin, ChangAn, GaoLing, HuYi, LanTIan, LianHu, LinTong, WeiYang, XinCheng, YanLiang, YanTa, ZhouZhi],
     adminDataSources: [],
@@ -80,10 +80,10 @@ const initArea = {
             entity.polygon = {
                 hierarchy: entity.polygon.hierarchy,
                 material: color,
-                outline: true,
-                outlineColor: Cesium.Color.BLUE,
-                outlineWidth: 1,
-                heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                // outline: true,
+                // outlineColor: Cesium.Color.BLUE,
+                // outlineWidth: 1,
+                // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
                 // height:0,
                 show: true, // 使用统一的显示控制
                 // show: showLayer,
@@ -160,11 +160,11 @@ const initArea = {
     // 移除行政区划数据
     removeAdminData() {
         // 遍历当前所有数据源
-        const toRemove = this.viewer.dataSources._dataSources.filter(
+        const toRemove = window.viewer.dataSources._dataSources.filter(
             ds => ds.name && ds.name.startsWith('区县-')
         );
         toRemove.forEach(ds => {
-            this.viewer.dataSources.remove(ds, true);
+            window.viewer.dataSources.remove(ds, true);
             // 从管理列表中移除
             const index = this.adminDataSources.indexOf(ds);
             if (index > -1) {
@@ -178,7 +178,7 @@ const initArea = {
     hideAdminData() {
         this.showAdminLayer = false;
         // 遍历当前所有数据源
-        const toHide = this.viewer.dataSources._dataSources.filter(
+        const toHide = window.viewer.dataSources._dataSources.filter(
             ds => ds.name && ds.name.startsWith('区县-')
         );
         toHide.forEach(ds => {
@@ -190,7 +190,7 @@ const initArea = {
     showAdminData() {
         this.showAdminLayer = true;
         // 遍历当前所有数据源
-        const toShow = this.viewer.dataSources._dataSources.filter(
+        const toShow = window.viewer.dataSources._dataSources.filter(
             ds => ds.name && ds.name.startsWith('区县-')
         );
         toShow.forEach(ds => {

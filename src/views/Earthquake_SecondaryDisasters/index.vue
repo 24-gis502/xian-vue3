@@ -1,6 +1,6 @@
 <template>
   <div
-      id="cesium-container" ref="cesiumContainer" class="container"
+      id="cesiumContainer" ref="cesiumContainer" class="container"
       v-loading="loading"
       element-loading-background="rgba(122, 122, 122, 0.8)">
     <HistoricalDisasterList
@@ -11,6 +11,7 @@
         @displayAnalysis="displayAnalysis"
         @hideAnalysis="hideAnalysis"
         @createPulseCircle="createPulseCircle"
+        @stopPulseCircle="stopPulseCircle"
         @loadingTrue="loadingTrue"
         @loadingFalse="loadingFalse"/>
     <Legend></Legend>
@@ -38,22 +39,20 @@ import {onMounted, reactive, ref,computed} from "vue";
 import Legend from "@/components/Earthquake/Legend.vue";
 import HistoricalDisasterList from "@/components/HistoricalDisaster/HistoricalDisasterList.vue";
 import Chart from "@/components/Earthquake/Chart.vue";
-import show_Popup from "@/components/Panel/showPopup.vue";
 import DisasterPopup from "@/components/Panel/DisasterPopup.vue";
-import {ImageMaterialProperty} from "cesium";
 
 import hospitalIcon from "@/assets/images/hospital.png"
 
 const cesiumContainer = ref(null);
 cesiumContainer.value = undefined;
 
-const _circle = createCircleImage(maxRadius);
+// const _circle = createCircleImage(maxRadius);
 
 const pulseInterval = ref(null);
 const pulseCollection = ref(null);
 const showAnalysis = ref(false);
 const disasterList = ref([]);
-const rainLevelPoint = ref([]);
+const levelPoint = ref([]);
 const loading = ref(false);
 const selectDisaster = ref([]);
 const maxRadius = 50;
@@ -77,8 +76,8 @@ Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOi
 
 //处理数据点
 const handleLevelPoints = (data) =>{
-  rainLevelPoint.value = data;
-  console.log('父组件接收的数据1212：', rainLevelPoint.value);
+  levelPoint.value = data;
+  console.log('父组件接收的数据1212：', levelPoint.value);
 }
 //处理选择灾害数据
 const handSelectDisaster = (data) => {
@@ -104,41 +103,12 @@ function loadingFalse() {
 }
 //创建光晕
 
-
-
-//创建脉冲图片
-function createCircleImage(maxRadius) {
-  const canvas = document.createElement('canvas')
-  canvas.width = maxRadius * 2;
-  canvas.height = maxRadius * 2;
-  const context = canvas.getContext('2d')
-
-  //清空画布，确保背景透明
-  // context.clearRect(0, 0, maxRadius, maxRadius);
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  // 开始绘制圆
-  context.beginPath();
-  // 绘制圆，arc参数说明：x,y,半径,起始角度,结束角度,顺时针/逆时针
-  // 绘制圆从canvas中心开始绘制，所以x,y坐标都为maxRadius
-  // 半径为maxRadius
-  context.arc(maxRadius, maxRadius, maxRadius, 0, Math.PI * 2, false);
-
-  // 闭合路径
-  context.closePath();
-
-  // 填充颜色，透明
-  context.fillStyle = 'rgba(255,255,255,0.7)';
-  context.fill();
-  return canvas.toDataURL('image/png');
-}
-
 //创建脉冲实体
 // function createPulseCircle() {
-//   console.log('createPulseCircle 被调用，数据长度：', rainLevelPoint.value.length, rainLevelPoint);
+//   console.log('createPulseCircle 被调用，数据长度：', levelPoint.value.length, levelPoint);
 //   console.log('_circle 数据 URI：', _circle);
 //   const startTime = Cesium.JulianDate.now();
-//   rainLevelPoint.value.forEach(point => {
+//   levelPoint.value.forEach(point => {
 //     window.viewer.entities.add({
 //       name: '脉冲圆',        // ← 可打印
 //       // position: Cesium.Cartesian3.fromDegrees(point.lon, point.lat,point.lon-0.01, point.lat-0.01),
@@ -189,8 +159,8 @@ function createCircleImage(maxRadius) {
 
 // 脉冲圆效果 - 类似光晕扩散
 function createPulseCircle() {
-  console.log('createPulseCircle 被调用，数据长度：', rainLevelPoint.value?.length);
-  console.log('rainLevelPoint数据:', rainLevelPoint.value);
+  console.log('createPulseCircle 被调用，数据长度：', levelPoint.value?.length);
+  console.log('levelPoint数据:', levelPoint.value);
 
   // 停止之前的脉冲动画
   if (pulseInterval.value) {
@@ -205,19 +175,19 @@ function createPulseCircle() {
   }
 
   // 安全检查
-  if (!rainLevelPoint.value || rainLevelPoint.value.length === 0 || !viewer) {
+  if (!levelPoint.value || levelPoint.value.length === 0 || !viewer) {
     console.warn("无法创建脉冲圆：无点数据或viewer未初始化");
     return;
   }
 
   // 创建脉冲圆集合
   pulseCollection.value = new Cesium.PointPrimitiveCollection();
-  viewer.scene.primitives.add(pulseCollection.value);
+  window.viewer.scene.primitives.add(pulseCollection.value);
 
   const pulsePoints = [];
 
   //创建脉冲效果
-  rainLevelPoint.value.forEach(point => {
+  levelPoint.value.forEach(point => {
     try {
       const position = Cesium.Cartesian3.fromDegrees(point.lon, point.lat);
       let baseColor;
@@ -230,6 +200,8 @@ function createPulseCircle() {
         outlineColor: baseColor,
         outlineWidth: 2,
         show: true,
+        // height: 0,
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
         // 使用内置材质避免兼容性问题
         material: new Cesium.Material({
           fabric: {
@@ -241,9 +213,9 @@ function createPulseCircle() {
             }
           }
         }),
-        zIndex:-10,
       });
-
+      // 设置点不可被点击
+      pulsePoint.disablePicking = true; // 或者根据具体类型设置
       // 存储点信息以便后续动画
       pulsePoint._pointData = point;
       pulsePoints.push(pulsePoint);
@@ -340,44 +312,77 @@ const currentPopupType = computed(() => {
 
   return '';
 });
-//点击点弹窗
+
+//穿透点击点弹窗
 function entitiesClick() {
-  // 清除之前的点击事件处理程序
-  if (clickHandler.value) {
+  if (clickHandler.value){
     clickHandler.value.destroy();
   }
-  // 为左键点击添加事件处理程序
-  clickHandler.value = new Cesium.ScreenSpaceEventHandler(window.viewer.canvas);
+
+  clickHandler.value = new Cesium.ScreenSpaceEventHandler(viewer.canvas);
+
   clickHandler.value.setInputAction((movement) => {
-    // 检查点击是否在实体上
-    const pickedObject = window.viewer.scene.pick(movement.position);
-    console.log("被点击了",pickedObject)
-    // 判断是否有disasterName属性
-    // 判断是否有disasterData属性
-    if (!pickedObject?.id?.disasterData) {
+    const pickedObjects = viewer.scene.drillPick(movement.position);
+    console.log("pickedObjects",pickedObjects)
+
+    if (!pickedObjects || pickedObjects.length === 0) {
+      closePopup();
       return;
     }
-    // 隐藏之前的弹出面板
-    closePopup();
-    if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id)) {
-      const entity = pickedObject.id;
-      // 获取实体的灾害数据
-      // const rawData = JSON.parse(JSON.stringify(entity.disasterData || {}));
-      // console.log(rawData,"000000000")
-      // selectedEntityData.value = entity.disasterData;
-      // console.log(entity.disasterData,"entity.disasterData")
-      // console.log(selectedEntityData.value, "获取实体灾害");
-      // calculateAndShowPopup(entity, movement.position);
-      selectedEntityData.value = entity.disasterData || {};
-      console.log("选中的实体数据:",selectedEntityData.value);
-      // 计算弹出框位置并显示面板
-      calculateAndShowPopup(entity, movement.position);
+
+    // 找第一个有 disasterData 的实体
+    const pickedEntity = pickedObjects.find(p => p.id?.disasterData);
+
+    if (pickedEntity) {
+      selectedEntityData.value = pickedEntity.id.disasterData || {};
+      calculateAndShowPopup(pickedEntity.id, movement.position);
+      console.log("选中的实体数据:", selectedEntityData.value);
     } else {
-      // 如果点击在空白处，隐藏信息框
-      window.viewer.selectedEntity = undefined;
+      closePopup();
     }
+
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 }
+
+
+
+// function entitiesClick() {
+//   // 清除之前的点击事件处理程序
+//   if (clickHandler.value) {
+//     clickHandler.value.destroy();
+//   }
+//   // 为左键点击添加事件处理程序
+//   clickHandler.value = new Cesium.ScreenSpaceEventHandler(window.viewer.canvas);
+//   clickHandler.value.setInputAction((movement) => {
+//     // 检查点击是否在实体上
+//     const pickedObject = window.viewer.scene.pick(movement.position);
+//     console.log("被点击了",pickedObject)
+//     // 判断是否有disasterName属性
+//     // 判断是否有disasterData属性
+//     if (!pickedObject?.id?.disasterData) {
+//       return;
+//     }
+//     // 隐藏之前的弹出面板
+//     closePopup();
+//     if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id)) {
+//       const entity = pickedObject.id;
+//       // 获取实体的灾害数据
+//       // const rawData = JSON.parse(JSON.stringify(entity.disasterData || {}));
+//       // console.log(rawData,"000000000")
+//       // selectedEntityData.value = entity.disasterData;
+//       // console.log(entity.disasterData,"entity.disasterData")
+//       // console.log(selectedEntityData.value, "获取实体灾害");
+//       // calculateAndShowPopup(entity, movement.position);
+//       selectedEntityData.value = entity.disasterData || {};
+//       console.log("选中的实体数据:",selectedEntityData.value);
+//       // 计算弹出框位置并显示面板
+//       calculateAndShowPopup(entity, movement.position);
+//     } else {
+//       // 如果点击在空白处，隐藏信息框
+//       window.viewer.selectedEntity = undefined;
+//     }
+//   }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+// }
 
 
 // 计算并显示弹出面板
@@ -414,27 +419,36 @@ async function calculateAndShowPopup(entity, movementPosition){
 }
 // 检测弹出面板边界
 function checkPopupBoundary() {
-  const panelWidth = 280;
-  const panelHeight = 200;
+  const panel = document.querySelector('.disaster-popup');
+  if (!panel) return;
+
+  const panelWidth = panel.offsetWidth || 280;
+  const panelHeight = panel.offsetHeight || 200;
+
   const canvas = window.viewer.canvas;
-  const rect = canvas.getBoundingClientRect();
-  // 防止面板超出右边界
-  if (popupPosition.x + panelWidth > rect.right) {
-    popupPosition.x = rect.right - panelWidth - 10;
+  const canvasRect = canvas.getBoundingClientRect();
+
+  // 相对于canvas的坐标
+  let x = popupPosition.x;
+  let y = popupPosition.y;
+
+  // 防止超出右边界
+  if (x + panelWidth > canvas.width) {
+    x = canvas.width - panelWidth - 10;
   }
-  // 防止面板超出下边界
-  if (popupPosition.y + panelHeight > rect.bottom) {
-    popupPosition.y = rect.bottom - panelHeight - 10;
+  // 防止超出下边界
+  if (y + panelHeight > canvas.height) {
+    y = canvas.height - panelHeight - 10;
   }
-  // 防止面板超出左边界
-  if (popupPosition.x < 10) {
-    popupPosition.x = 10;
-  }
-  // 防止面板超出上边界
-  if (popupPosition.y < 10) {
-    popupPosition.y = 10;
-  }
+  // 左边界
+  if (x < 0) x = 10;
+  // 上边界
+  if (y < 0) y = 10;
+
+  popupPosition.x = x;
+  popupPosition.y = y;
 }
+
 
 function calculatePopupLeft() {
   return popupPosition.x;
@@ -464,13 +478,11 @@ const chartDatas = reactive({
 });
 
 const init = () => {
-  initArea.setViewer(viewer);
-  loadPoints.setViewer(viewer);
-  // 设置全局 viewer
-  window.viewer = viewer;
-
+  // initArea.setViewer(viewer);
+  // loadPoints.setViewer(viewer);
+  selectedEntityData.value = null;
   // 初始化行政区划图层
-  // initArea.loadAdminData();
+  initArea.loadAdminData();
 
   // // 加载隐患点
   // loadPoints.loadDisasterPoints();
@@ -481,23 +493,11 @@ const init = () => {
 
 onMounted(async () => {
   viewer = initCesium(cesiumContainer.value);
-  // // 2. 等待下一个 tick 确保 DOM 完全渲染
+   // 2. 等待下一个 tick 确保 DOM 完全渲染
   await nextTick();
   window.viewer = viewer
-  // window.viewer = initCesium("cesium-container");
-  // // 调整到指定位置
-  // window.viewer.cesiumWidget.creditContainer.style.display = "none";
-  // window.viewer.camera.setView({
-  //   destination: Cesium.Cartesian3.fromDegrees(108.93, 34.27, 200000),
-  //   orientation: {
-  //     heading: Cesium.Math.toRadians(0),
-  //     pitch: Cesium.Math.toRadians(-90),
-  //     roll: 0.0,
-  //   },
-  // });
-  //加载西安行政区划
-  // basicLayers.loadAdminData();
   init();
+  // loadPoints.addPeopleLayer();
   entitiesClick();
   console.log('Cesium 初始化完成', viewer);
 });
@@ -505,7 +505,7 @@ onMounted(async () => {
 
 <style scoped lang="scss">
 
-#cesium-container {
+#cesiumContainer {
   width: 100%;
   height: calc(100vh - 50px);
   padding: 0;

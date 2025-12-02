@@ -13,7 +13,7 @@
       >
         <el-button
             type="default"
-            size="medium"
+            size="default"
             class="time-dropdown-btn"
             style="
             background: rgba(15, 61, 118, 0.6);
@@ -36,7 +36,7 @@
             <el-dropdown-item
                 v-for="(item, index) in timeRangeOptions"
                 :key="index"
-                @click="selectTimeRange(item)"
+                @click="handleTimeRangeSelect(item)"
                 class="el-dropdown-item"
             >
               {{ item.label }}
@@ -121,182 +121,123 @@
 </template>
 
 <script setup>
-import {ArrowDown, ArrowUp} from "@element-plus/icons-vue";
-import { ref, computed, onMounted } from 'vue'
-import { Search } from '@element-plus/icons-vue'
-import {getAllDisasterRain, getAllEarthquakeList, getRainAffectPoints} from "@/api/system/disasterEvents.js";
-import {getAllAffectPoints} from "@/api/earthquake/datas.js";
-
+import { ref, computed, onMounted, reactive, watch } from 'vue'
+import { ArrowDown, ArrowUp, Search } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
+import {
+  getAllDisasterRain,
+  getAllEarthquakeList,
+  getRainAffectPoints
+} from "@/api/system/disasterEvents.js"
+import { getAllAffectPoints } from "@/api/earthquake/datas.js"
 import layers from "@/cesium/layers.js"
-import loadPoints from "@/cesium/loadPoints.js";
+import loadPoints from "@/cesium/loadPoints.js"
 
-// 响应式数据
-const tableData = ref([])
-const originalTableData = ref([])
-const levelPoints = ref([]);
-const selectDisaster = ref([]);
-const searchKeyword = ref('')
-const ellipseParams = ref([])//椭圆参数
-const rotation = ref([]) //裂带旋转角度
-const circle_param = reactive({}); //椭圆参数
-const AllAffectPoints = ref([]);
-const rainAffectPoints = ref([]); //暴雨影响点
-
+// 图标导入
 import dangerSourceIcon from "@/assets/images/gasstation.png"
 import hospitalIcon from "@/assets/images/hospital.png"
-import landslideIcon from "@/assets/images/landslide.png";
-import debrisFlowIcon from "@/assets/images/DebrisFlow.png";
-import flashIcon from "@/assets/images/flashflood.png";
-import waterIcon from "@/assets/images/water.png";
-import { ElMessage } from 'element-plus';
+import landslideIcon from "@/assets/images/landslide.png"
+import debrisFlowIcon from "@/assets/images/DebrisFlow.png"
+import flashIcon from "@/assets/images/flashflood.png"
+import waterIcon from "@/assets/images/water.png"
+
+// ============== 常量定义 ==============
+const DISASTER_TYPES = {
+  EARTHQUAKE: '地震',
+  RAIN: '暴雨'
+}
 
 
-const selectedTimeRange = ref('全部时间')
-const showTimeDropdown = ref(false)
-const currentPage = ref(1)
-const pageSize = ref(10)
-
-//接收父组件传来的数据
-const { chartDatas, disasterList, rainLevelPoint } = defineProps([
-  "chartDatas",
-  "disasterList",
-  "rainLevelPoint"
-]);
-//接收父组件传来的方法
-const emit = defineEmits([
-  "displayAnalysis",
-  "hideAnalysis",
-  "createPulseCircle",
-  'update:levelPoints',
-  'update:selectDisaster',
-  "loadingTrue",
-  "loadingFalse"
-]);
-watch(
-    selectDisaster,
-    (newVal) => {
-      emit('update:selectDisaster', newVal); // 触发事件传递最新值
-    },
-    { deep: true }
-);
-
-watch(
-    levelPoints,
-    (newVal) => {
-      emit('update:levelPoints', newVal); // 触发事件传递最新值
-    },
-    { deep: true }
-);
-
-// 时间范围选项
-const timeRangeOptions = ref([
+const TIME_RANGE_OPTIONS = [
   { label: '最近一个星期', value: 'week' },
   { label: '最近一个月', value: 'month' },
   { label: '最近三个月', value: 'quarter' },
   { label: '最近半年', value: 'halfYear' },
   { label: '最近一年', value: 'year' },
   { label: '全部时间', value: 'all' }
+]
+
+const timeRangeOptions = TIME_RANGE_OPTIONS
+
+const EARTHQUAKE_POINT_CONFIG = {
+  "风险源": { icon: dangerSourceIcon, chartIndex: 0 },
+  "医院": { icon: hospitalIcon, chartIndex: 1 },
+  "隐患点": {
+    subTypes: {
+      "滑坡": { icon: landslideIcon, chartIndex: 2 },
+      "泥石流": { icon: debrisFlowIcon, chartIndex: 3 }
+    }
+  }
+}
+
+const RAIN_DISASTER_CONFIG = {
+  "内涝": { icon: waterIcon, chartIndex: 0 },
+  "山洪": { icon: flashIcon, chartIndex: 1 },
+  "滑坡": { icon: landslideIcon, chartIndex: 2 },
+  "泥石流": { icon: debrisFlowIcon, chartIndex: 3 }
+}
+
+// ============== 响应式数据 ==============
+const tableData = ref([])
+const originalTableData = ref([])
+const levelPoints = ref([])
+const selectDisaster = ref({})
+const searchKeyword = ref('')
+const selectedTimeRange = ref('全部时间')
+const showTimeDropdown = ref(false)
+const currentPage = ref(1)
+const pageSize = ref(10)
+const AllAffectPoints = ref([])
+const rainAffectPoints = ref([])
+const circleParam = reactive({})
+
+// ============== Props & Emits ==============
+const { chartDatas } = defineProps(["chartDatas"])
+const emit = defineEmits([
+  "displayAnalysis",
+  "hideAnalysis",
+  "createPulseCircle",
+  "stopPulseCircle",
+  'update:levelPoints',
+  'update:selectDisaster',
+  "loadingTrue",
+  "loadingFalse"
 ])
 
-// 计算属性：过滤后的数据
-const filteredTableData = computed(() => {
-  let filtered = tableData.value
+// ============== Watchers ==============
+watch(selectDisaster, (newVal) => {
+  emit('update:selectDisaster', newVal)
+}, { deep: true })
 
-  // 搜索过滤
-  if (searchKeyword.value) {
-    const keyword = searchKeyword.value.toLowerCase()
-    filtered = filtered.filter(item =>
-        (item.disasterName && item.disasterName.toLowerCase().includes(keyword)) ||
-        (item.disasterType && item.disasterType.toLowerCase().includes(keyword))
-    )
-  }
-  return filtered
+watch(levelPoints, (newVal) => {
+  emit('update:levelPoints', newVal)
+}, { deep: true })
+
+// ============== 计算属性 ==============
+const filteredTableData = computed(() => {
+  if (!searchKeyword.value) return tableData.value
+
+  const keyword = searchKeyword.value.toLowerCase()
+  return tableData.value.filter(item =>
+      (item.disasterName?.toLowerCase().includes(keyword)) ||
+      (item.disasterType?.toLowerCase().includes(keyword))
+  )
 })
 
-// 计算属性：分页后的数据
 const paginatedTableData = computed(() => {
   const start = (currentPage.value - 1) * pageSize.value
-  const end = start + pageSize.value
-  return filteredTableData.value.slice(start, end)
+  return filteredTableData.value.slice(start, start + pageSize.value)
 })
 
-// 计算属性：总数
 const total = computed(() => filteredTableData.value.length)
 
-// 选择时间范围
-const selectTimeRange = (item) => {
-  selectedTimeRange.value = item.label
-  showTimeDropdown.value = false
-  filterDataByTimeRange(item.value)
-}
-
-// 时间筛选
-const filterDataByTimeRange = (timeRange) => {
-  if (!originalTableData.value.length) return
-
-  const now = new Date()
-  let startTime = null
-
-  switch (timeRange) {
-    case 'week':
-      startTime = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
-      break
-    case 'month':
-      startTime = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
-      break
-    case 'quarter':
-      startTime = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000)
-      break
-    case 'halfYear':
-      startTime = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000)
-      break
-    case 'year':
-      startTime = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000)
-      break
-    case 'all':
-      tableData.value = originalTableData.value
-      resetPagination()
-      return
-    default:
-      tableData.value = originalTableData.value
-      resetPagination()
-      return
-  }
-
-  const filteredData = originalTableData.value.filter(item => {
-    const occurrenceDate = new Date(item.occurrenceTime)
-    if (isNaN(occurrenceDate.getTime())) return false
-    return occurrenceDate >= startTime
-  })
-
-  tableData.value = filteredData
-  resetPagination()
-}
-
-// 搜索处理
-const handleSearch = () => {
-  currentPage.value = 1 // 搜索时重置到第一页
-  console.log("搜索关键词：", searchKeyword.value, "筛选结果数：", filteredTableData.value.length);
-}
-
-// 分页处理
-const handleSizeChange = (newSize) => {
-  pageSize.value = newSize
-  currentPage.value = 1
-}
-
-const handleCurrentChange = (newPage) => {
-  currentPage.value = newPage
-}
-
-// 重置分页
-const resetPagination = () => {
-  currentPage.value = 1
-}
-
-// 格式化日期
+// ============== 工具函数 ==============
+/**
+ * 格式化日期
+ */
 const formatDate = (dateString) => {
   if (!dateString) return '未知时间'
+
   try {
     const date = new Date(dateString)
     return date.toLocaleString('zh-CN', {
@@ -312,9 +253,31 @@ const formatDate = (dateString) => {
   }
 }
 
-// 获取数据
-const fetchData = async () => {
+/**
+ * 重置分页
+ */
+const resetPagination = () => {
+  currentPage.value = 1
+}
+
+/**
+ * 清理地图数据
+ */
+const clearMapData = () => {
+  layers.removeIsoseismalCircle()
+  loadPoints.removeHiddenEntity()
+  levelPoints.value = []
+  emit("hideAnalysis")
+}
+
+// ============== 数据获取函数 ==============
+/**
+ * 获取灾害数据
+ */
+const fetchDisasterData = async () => {
   try {
+    emit("loadingTrue")
+
     const [earthquakeList, rainList] = await Promise.all([
       getAllEarthquakeList(),
       getAllDisasterRain()
@@ -322,15 +285,17 @@ const fetchData = async () => {
 
     const earthquakeData = earthquakeList.data.map(item => ({
       ...item,
-      disasterType: "地震",
-      uniqueId: `earthquake_${item.disasterId || Date.now() + Math.random()}`
+      disasterType: DISASTER_TYPES.EARTHQUAKE,
+      uniqueId: `earthquake_${item.disasterId || Date.now()}_${Math.random()}`
     }))
+    console.log("earthquakeData",earthquakeData)
 
     const rainData = rainList.data.map(item => ({
       ...item,
-      disasterType: "暴雨",
-      uniqueId: `rain_${item.disasterId || Date.now() + Math.random()}`
+      disasterType: DISASTER_TYPES.RAIN,
+      uniqueId: `rain_${item.disasterId || Date.now()}_${Math.random()}`
     }))
+    console.log("rainData",rainData)
 
     const mergedData = [...earthquakeData, ...rainData]
     mergedData.sort((a, b) => new Date(b.occurrenceTime) - new Date(a.occurrenceTime))
@@ -341,196 +306,251 @@ const fetchData = async () => {
     console.error('请求灾害数据失败', error)
     tableData.value = []
     originalTableData.value = []
+  } finally {
+    emit("loadingFalse")
   }
 }
 
+/**
+ * 根据时间范围筛选数据
+ */
+const filterDataByTimeRange = (timeRange) => {
+  if (!originalTableData.value.length) return
 
-// 行点击事件
-async function handleRowClick(item) {
+  if (timeRange === 'all') {
+    tableData.value = originalTableData.value
+    resetPagination()
+    return
+  }
+
+  const now = new Date()
+  const timeMap = {
+    'week': 7,
+    'month': 30,
+    'quarter': 90,
+    'halfYear': 180,
+    'year': 365
+  }
+
+  const days = timeMap[timeRange]
+  if (!days) return
+
+  const startTime = new Date(now.getTime() - days * 24 * 60 * 60 * 1000)
+
+  const filteredData = originalTableData.value.filter(item => {
+    const occurrenceDate = new Date(item.occurrenceTime)
+    return !isNaN(occurrenceDate.getTime()) && occurrenceDate >= startTime
+  })
+
+  tableData.value = filteredData
+  resetPagination()
+}
+
+// ============== 事件处理函数 ==============
+/**
+ * 选择时间范围
+ */
+const handleTimeRangeSelect = (item) => {
+  selectedTimeRange.value = item.label
+  showTimeDropdown.value = false
+  filterDataByTimeRange(item.value)
+}
+
+/**
+ * 搜索处理
+ */
+const handleSearch = () => {
+  currentPage.value = 1
+}
+
+/**
+ * 分页大小变化
+ */
+const handleSizeChange = (newSize) => {
+  pageSize.value = newSize
+  currentPage.value = 1
+}
+
+/**
+ * 当前页变化
+ */
+const handleCurrentChange = (newPage) => {
+  currentPage.value = newPage
+}
+
+/**
+ * 处理地震灾害
+ */
+const processEarthquakeDisaster = async (item) => {
+  clearMapData()
+
+  // 加载断层数据
+  loadPoints.addFaultZone()
+
+  // 绘制烈度圈并计算参数
+  layers.DrawEllipse(item.longitude, item.latitude, item.magnitude)
+  const ellipseParams = layers.calculateEllipseParams(item.magnitude)
+  const rotation = layers.calculateRotation(item.longitude, item.latitude, item.magnitude)
+
+  // 设置圆参数
+  const outerCircle = ellipseParams[ellipseParams.length - 1]
+  Object.assign(circleParam, {
+    longitude: item.longitude,
+    latitude: item.latitude,
+    magnitude: item.magnitude,
+    semiMajorAxis: outerCircle.semiMajorAxis,
+    semiMinorAxis: outerCircle.semiMinorAxis,
+    rotation
+  })
+
+  // 获取影响点数据
+  emit("loadingTrue")
+  chartDatas.title = "历史地震影响范围统计"
+
+  const response = await getAllAffectPoints(circleParam)
+  AllAffectPoints.value = response.data
+
+  await processEarthquakeAffectPoints(AllAffectPoints.value.affectPoints)
+
+  // 触发后续事件
+  emit("createPulseCircle")
+  emit("displayAnalysis")
+  emit("loadingFalse")
+}
+
+/**
+ * 处理地震影响点数据
+ */
+const processEarthquakeAffectPoints = async (affectPoints) => {
+  const drawTasks = []
+  const subTypeCounters = { "滑坡": 0, "泥石流": 0 }
+
+  // 初始化图表数据
+  chartDatas.xAxis.data = ["风险源", "医院", "滑坡", "泥石流"]
+  chartDatas.seriesDatas = [0, 0, 0, 0]
+
+  affectPoints.forEach(point => {
+    const config = EARTHQUAKE_POINT_CONFIG[point.pointType]
+    if (!config) return
+
+    if (point.pointType === "风险源" || point.pointType === "医院") {
+      drawTasks.push(() => loadPoints.loadEntities(point.pointType, point, config.icon))
+      chartDatas.seriesDatas[config.chartIndex] = point.features?.length || 0
+    }
+
+    if (point.pointType === "隐患点") {
+      point.features?.forEach(feature => {
+        const disasterType = feature.properties.disaster_type
+        const subConfig = config.subTypes[disasterType]
+
+        if (subConfig) {
+          levelPoints.value.push({
+            lon: feature.geometry.coordinates[0],
+            lat: feature.geometry.coordinates[1]
+          })
+
+          drawTasks.push(() => loadPoints.loadPoint(disasterType, feature, subConfig.icon))
+          subTypeCounters[disasterType]++
+        }
+      })
+    }
+  })
+
+  // 更新隐患点计数器
+  chartDatas.seriesDatas[2] = subTypeCounters["滑坡"]
+  chartDatas.seriesDatas[3] = subTypeCounters["泥石流"]
+
+  // 执行绘制任务
+  for (const task of drawTasks) {
+    await task()
+  }
+}
+
+/**
+ * 处理暴雨灾害
+ */
+const processRainDisaster = async (item) => {
+  clearMapData()
+
+  const DTO = {
+    disasterId: item.disasterId,
+    disasterType: ""
+  }
+
+  emit("loadingTrue")
+
+  try {
+    const response = await getRainAffectPoints(DTO)
+    rainAffectPoints.value = response.data
+
+    if (rainAffectPoints.value?.pointInfos?.length > 0) {
+      await processRainAffectPoints(rainAffectPoints.value.pointInfos)
+      emit("createPulseCircle")
+      emit("displayAnalysis")
+    } else {
+      ElMessage.warning('未查询到灾害影响内的高风险隐患点，请切换历史灾害！')
+    }
+  } catch (error) {
+    console.error("获取暴雨数据失败", error)
+    ElMessage.error('获取暴雨数据失败')
+  } finally {
+    emit("loadingFalse")
+  }
+}
+
+/**
+ * 处理暴雨影响点数据
+ */
+const processRainAffectPoints = (pointInfos) => {
+  const drawTasks = []
+  const counters = { "内涝": 0, "山洪": 0, "滑坡": 0, "泥石流": 0 }
+
+  // 初始化图表数据
+  chartDatas.title = "历史暴雨影响范围统计"
+  chartDatas.xAxis.data = ["内涝", "山洪", "滑坡", "泥石流"]
+  chartDatas.seriesDatas = [0, 0, 0, 0]
+
+  pointInfos.forEach(pointItem => {
+    // 收集高/中等级的点
+    if (["[高]", "[中]"].includes(pointItem.level)) {
+      levelPoints.value.push(pointItem)
+    }
+
+    // 处理灾害类型
+    const config = RAIN_DISASTER_CONFIG[pointItem.disasterType]
+    if (config) {
+      drawTasks.push(() => loadPoints.loadIcon(pointItem.disasterType, pointItem, config.icon))
+      counters[pointItem.disasterType]++
+    }
+  })
+
+  // 更新图表数据
+  Object.entries(counters).forEach(([type, count], index) => {
+    chartDatas.seriesDatas[index] = count
+  })
+
+  // 执行绘制任务
+  drawTasks.forEach(task => task())
+}
+
+/**
+ * 行点击事件
+ */
+const handleRowClick = async (item) => {
   console.log('点击行数据:', item)
-  // 这里可以添加行点击后的处理逻辑，比如显示详情等
-  emit('update:selectDisaster', item);
+  emit("stopPulseCircle")
+  selectDisaster.value = item
 
-  if (item.disasterType === "地震") {
-
-    //删除地图上烈度圈
-    layers.removeIsoseismalCircle();
-
-    //删除实体点
-    loadPoints.removeHiddenEntity();
-
-    //加载西安断层数据
-    loadPoints.addFaultZone();
-    //清空数组
-    levelPoints.value = [];
-
-    emit("hideAnalysis");
-// 绘制烈度圈椭圆
-    layers.DrawEllipse(item.longitude, item.latitude, item.magnitude);
-// 计算椭圆参数
-    ellipseParams.value = layers.calculateEllipseParams(item.magnitude);
-// 计算断裂带旋转角度
-    rotation.value = layers.calculateRotation(item.longitude, item.latitude, item.magnitude);
-
-    let circle = ellipseParams.value[ellipseParams.value.length - 1]  // 获取最外层烈度圈
-    circle_param.longitude = item.longitude;
-    circle_param.latitude = item.latitude;
-    circle_param.magnitude = item.magnitude;
-    circle_param.semiMajorAxis = circle.semiMajorAxis;
-    circle_param.semiMinorAxis = circle.semiMinorAxis;
-    circle_param.rotation = rotation.value;
-    emit("loadingTrue");
-    chartDatas.title = "历史地震影响范围统计";
-    AllAffectPoints.value = await getAllAffectPoints(circle_param);
-    console.log("所有影响点的数据AllAffectPoints.value", AllAffectPoints.value.data.affectPoints)
-    // 定义点类型配置映射
-    const pointTypeConfig = {
-      "风险源": {icon: dangerSourceIcon, seriesIndex: 0},
-      "医院": {icon: hospitalIcon, seriesIndex: 1},
-      "隐患点": {
-        subTypes: {
-          "滑坡": {icon: landslideIcon, seriesIndex: 2},
-          "泥石流": {icon: debrisFlowIcon, seriesIndex: 3}
-        }
-      }
-    };
-
-// 初始化图表数据
-    chartDatas.xAxis.data = ["风险源", "医院", "滑坡", "泥石流"];
-    chartDatas.seriesDatas = [0, 0, 0, 0];
-    // 缓存数据引用，避免重复访问
-    const affectPoints = AllAffectPoints.value.data.affectPoints;
-    for (let i = 0; i < affectPoints.length; i++) {
-      const point = affectPoints[i];
-      const type = point.pointType;
-      const config = pointTypeConfig[type];
-
-      if (!config) {
-        console.log(`未处理的点类型: ${type}`);
-        continue;
-      }
-      // 处理风险源和医院
-      if (type === "风险源" || type === "医院") {
-        await loadPoints.loadEntities(type, point, config.icon);
-        chartDatas.seriesDatas[config.seriesIndex] = point.features?.length || 0;
-      }
-      if (type === "隐患点") {
-        const features = point.features || [];
-        // 可以在这里初始化子类型计数器，避免重复声明
-        const subTypeCounters = {"滑坡": 0, "泥石流": 0};
-
-        for (let j = 0; j < features.length; j++) {
-          const feature = features[j];
-          const disasterType = feature.properties.disaster_type;
-          const subConfig = config.subTypes[disasterType];
-
-          if (config) {
-            // 收集坐标点
-            levelPoints.value.push({
-              lon: feature.geometry.coordinates[0],
-              lat: feature.geometry.coordinates[1]
-            });
-            //绘制点
-            loadPoints.loadPoint(disasterType, feature, subConfig.icon);
-            // 更新计数器
-            subTypeCounters[disasterType]++;
-          }
-        }
-        console.log(911119,viewer.entities.values);
-        // 更新图表数据
-        chartDatas.seriesDatas[2] = subTypeCounters["滑坡"];
-        chartDatas.seriesDatas[3] = subTypeCounters["泥石流"];
-      }
-    }
-    emit('update:levelPoints', levelPoints.value);
-    emit("createPulseCircle");
-    emit("displayAnalysis");
-    emit("loadingFalse");
-  }
-
-
-  if(item.disasterType === "暴雨"){
-
-    //删除地图上烈度圈
-    layers.removeIsoseismalCircle();
-
-    //删除实体点
-    loadPoints.removeHiddenEntity();
-
-    //清空数组
-    levelPoints.value = [];
-
-    emit("hideAnalysis");
-    const DTO = {
-      disasterId: item.disasterId,
-      disasterType: "",
-    };
-    emit("loadingTrue");
-    // 创建灾害类型与图标、计数器的映射关系
-    const disasterConfig = {
-      "内涝": { icon: waterIcon, counter: 0 },
-      "山洪": { icon: flashIcon, counter: 0 },
-      "滑坡": { icon: landslideIcon, counter: 0 },
-      "泥石流": { icon: debrisFlowIcon, counter: 0 }
-    };
-
-    // 异步获取暴雨影响点数据
-    await getRainAffectPoints(DTO).then(response => {
-      rainAffectPoints.value = response.data;
-      console.log("获取暴雨数据成功",response.data)
-    })
-        .catch(error => {
-          console.log("获取暴雨数据失败", error)
-        })
-    console.log("获取到的暴雨隐患点", rainAffectPoints.value)
-    if (rainAffectPoints.value && rainAffectPoints.value.pointInfos && rainAffectPoints.value.pointInfos.length > 0) {
-      chartDatas.title = "历史暴雨影响范围统计";
-      rainAffectPoints.value.pointInfos.forEach(item => {
-        // 处理高/中等级的点
-        if (["[高]", "[中]"].includes(item.level)) {
-          levelPoints.value.push(item);
-        }
-
-        // 处理灾害类型相关逻辑
-        const config = disasterConfig[item.disasterType];
-        if (config) {
-          loadPoints.DrawIcon(item.disasterType, item, config.icon);
-          console.log(item.disasterType);
-          // 更新对应的计数器
-          config.counter++; // 或根据实际变量作用域调整
-        } else {
-          // 可以添加未知灾害类型的处理逻辑
-          console.log(`未知灾害类型: ${item.disasterType}`);
-        }
-      });
-
-
-      chartDatas.xAxis.data[0] = "内涝";
-      chartDatas.xAxis.data[1] = "山洪";
-      chartDatas.xAxis.data[2] = "滑坡";
-      chartDatas.xAxis.data[3] = "泥石流";
-      chartDatas.seriesDatas[0] = disasterConfig["内涝"].counter;
-      chartDatas.seriesDatas[1] = disasterConfig["山洪"].counter;
-      chartDatas.seriesDatas[2] = disasterConfig["滑坡"].counter;
-      chartDatas.seriesDatas[3] = disasterConfig["泥石流"].counter;
-
-      emit("displayAnalysis");
-      emit('update:levelPoints', levelPoints.value);
-      emit("createPulseCircle");
-      emit("loadingFalse");
-    }else {
-
-      ElMessage({
-        message: '未查询到灾害影响内的高风险隐患点，请切换历史灾害！',
-        type: 'warning',
-      });
-      emit("loadingFalse");
-
-    }
+  if (item.disasterType === DISASTER_TYPES.EARTHQUAKE) {
+    await processEarthquakeDisaster(item)
+  } else if (item.disasterType === DISASTER_TYPES.RAIN) {
+    await processRainDisaster(item)
   }
 }
+
+// ============== 生命周期 ==============
 onMounted(() => {
-  fetchData()
+  fetchDisasterData()
 })
 </script>
 

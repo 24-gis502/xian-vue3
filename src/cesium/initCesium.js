@@ -1,8 +1,10 @@
 // initCesium.js
 import * as Cesium from "cesium";
 
-const tdtToken = "621de2f225f87d584e476b21168079c3";
+// const tdtToken = "621de2f225f87d584e476b21168079c3";
 // const tdtToken = "9f45f57cab9140a09f29918fa4aa4b5c";
+// const tdtToken = "ca190ab79716f01d331e8a744589b417"
+ const tdtToken = "88055d3d7f13f8f7e6e8eeb67cf6d78a"
 
 const initCesium = (cesiumContainer) => {
     const viewer = new Cesium.Viewer(cesiumContainer, {
@@ -44,7 +46,7 @@ const initCesium = (cesiumContainer) => {
     viewer.shadows = false
 
     // 在Viewer初始化后或需要的地方执行
-    viewer.scene.globe.depthTestAgainstTerrain = false;
+    // viewer.scene.globe.depthTestAgainstTerrain = false;
     // 清空logo
     viewer.cesiumWidget.creditContainer.style.display = "none";
 

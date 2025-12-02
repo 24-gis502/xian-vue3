@@ -53,6 +53,7 @@ import Table from "../components/Earthquake/Table.vue"
 
 //-------------------------------------------------
 // 响应式数据
+const dataTypeHiddenDisaster = ref(null)
 let baseInfoTitle = ref("")
 let showBaseInfo = ref(false)
 let showDisasterInformation = ref(false)
@@ -95,6 +96,7 @@ function setupEntityClickHandler(){
   clickHandler.value = new Cesium.ScreenSpaceEventHandler(viewer.canvas);
   clickHandler.value.setInputAction((movement) => {
     const pickedObject = viewer.scene.pick(movement.position);
+    console.log("movement.position",movement.position)
     console.log(pickedObject,"pickedObject数据")
 
     // 先关闭所有弹窗
@@ -351,8 +353,8 @@ function checkPopupBoundary() {
 }
 
 const init = () => {
-  initArea.setViewer(viewer);
-  loadPoints.setViewer(viewer);
+  // initArea.setViewer(viewer);
+  // loadPoints.setViewer(viewer);
 
   // 初始化行政区划图层
   initArea.loadAdminData();
@@ -366,6 +368,7 @@ const init = () => {
 onMounted(async () => {
   viewer = initCesium(cesiumContainer.value);
   await nextTick();
+  window.viewer = viewer
   init();
   // initEntitiesClickHandler()
 });
@@ -374,6 +377,7 @@ onUnmounted(() => {
   if (clickHandler.value) {
     clickHandler.value.destroy();
   }
+
 
   // 正确销毁行政区划模块
   initArea.destroy();

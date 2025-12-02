@@ -105,9 +105,7 @@ function addChart() {
       type: "category",
       data: chartDatas.xAxis.data,
       axisLabel: {
-        textStyle: {
-          fontSize: 12, // 设置字体大小为25
-        },
+        fontSize: 12, // 字体大小直接放在这里
         interval: 0,
         margin: 20,
         color: "white", // x轴标签保持白色
@@ -118,6 +116,10 @@ function addChart() {
             fontSize: 15,
           },
         },
+        // 其他可能的文本样式属性也可以直接放在这里
+        fontFamily: 'sans-serif',
+        fontWeight: 'normal',
+        fontStyle: 'normal'
       },
       axisLine: {
         lineStyle: {
@@ -130,6 +132,8 @@ function addChart() {
       axisLabel: {
         formatter: "{value}",
         color: "white", // y轴标签保持白色
+        fontSize: 12, // 如果需要设置字体大小，直接在这里添加
+        // 其他文本样式属性也可以直接添加
       },
       axisLine: {
         lineStyle: {

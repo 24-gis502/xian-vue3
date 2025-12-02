@@ -50,17 +50,19 @@ export const constantRoutes = [
   {
     path: '/earthquake_secondary_disasters',
     component: Layout,
+    redirect: '/earthquake_secondary_disasters',
     name: 'Earthquake_Secondary_Disasters',
-    meta: { title: '次生衍生灾害链分析' },
+    meta: { title: '次生衍生灾害链分析', icon: 'el-icon-warning' },
     children: [
       {
         path: '',
-        component: () => import('@/views/Earthquake_SecondaryDisasters'),
+        component: () => import('@/views/Earthquake_SecondaryDisasters/index.vue'),
         name: 'Earthquake_Secondary_Disasters_Content',
         meta: { title: '次生衍生灾害链分析' }
       }
     ]
   },
+
   {
     path: '/login',
     component: () => import('@/views/login'),

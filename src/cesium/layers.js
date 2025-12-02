@@ -1,27 +1,6 @@
 import * as Cesium from "cesium";
 import lineData from "@/assets/西安断层数据（新）.json";
 
-// import debrisFlowIcon from "@/assets/images/DebrisFlow.png";
-// import landslideIcon from "@/assets/images/landslide.png";
-// import riskArea from "@/assets/images/riskArea.png";
-// import {useSimulationPointStore} from "@/store/earthquake/simulation_points.js";
-// import timeTransfer from "@/cesium/timeTransfer.js";
-// import BaQiaoArea from "@/assets/static/area/BaQiao.json";
-// import BeiLin from "@/assets/static/area/BeiLin.json";
-// import ChangAn from "@/assets/static/area/ChangAn.json";
-// import GaoLing from "@/assets/static/area/GaoLing.json";
-// import HuYi from "@/assets/static/area/HuYi.json";
-// import LanTIan from "@/assets/static/area/LanTIan.json";
-// import LianHu from "@/assets/static/area/LianHu.json";
-// import LinTong from "@/assets/static/area/LinTong.json";
-// import WeiYang from "@/assets/static/area/WeiYang.json";
-// import XinCheng from "@/assets/static/area/XinCheng.json";
-// import YanLiang from "@/assets/static/area/YanLiang.json";
-// import YanTa from "@/assets/static/area/YanTa.json";
-// import ZhouZhi from "@/assets/static/area/ZhouZhi.json";
-// import {PulseTool} from "@/cesium/pulse.js";
-//
-// import timeLine from "@/cesium/timeLine.js";
 
 let layers = {
     //画烈度圈
@@ -46,23 +25,12 @@ let layers = {
     },
 
     //删除烈度圈
+    /** 删除烈度圈及标签 */
     removeIsoseismalCircle() {
-        let toRemove = window.viewer.entities.values.filter(e => e.name === '地震影响区域');
-
-        console.log("删除的烈度圈数据",window.viewer.entities.values)
-        if (toRemove) {
-            // 2. 逐个删除
-            toRemove.forEach(entity => {
-                window.viewer.entities.remove(entity);
-            });
-        }
-        let toRemoveLabel = window.viewer.entities.values.filter(e => e.name === '地震影响区域标签');
-        if (toRemoveLabel) {
-            // 2. 逐个删除
-            toRemoveLabel.forEach(entity => {
-                window.viewer.entities.remove(entity);
-            });
-        }
+        const toRemove = window.viewer.entities.values.filter(e =>
+            e.name === "地震影响区域" || e.name === "地震影响区域标签"
+        );
+        toRemove.forEach(entity => window.viewer.entities.remove(entity));
     },
     //计算断裂带走向角度
     //todo
@@ -188,7 +156,7 @@ let layers = {
     },
     //椭圆绘制
     //todo
-    DrawCircle(point, rotation, magnitude) {
+    async DrawCircle(point, rotation, magnitude) {
 
         // 地震源位置
         let position = point;
@@ -216,15 +184,19 @@ let layers = {
                 ellipse: {
                     semiMinorAxis: short,
                     semiMajorAxis: long,
-                    material: Cesium.Color.fromCssColorString(params.color).withAlpha(0.3),
+                    material: Cesium.Color.fromCssColorString(params.color).withAlpha(0.4),
                     // height: 0,
-                    outline: true,
-                    outlineColor: Cesium.Color.RED,
-                    outlineWidth: 3,
-                    heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
-                    clampToGround: true,
-                    rotation: bearing, // 设置椭圆旋转角度               // 低层级
-                    zIndex: 0
+                    // outline: true,
+                    // outlineColor: Cesium.Color.RED,
+                    // outlineWidth: 3,
+                    // heightReference: Cesium.HeightReference.NONE,
+                    // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                    // clampToGround: true,
+                    rotation: bearing,
+                    // 关键修改：降低椭圆的渲染优先级
+                    classificationType: Cesium.ClassificationType.BOTH, // 或 Cesium.ClassificationType.TERRAIN
+                    shadows: Cesium.ShadowMode.DISABLED, // 禁用阴影减少渲染复杂度
+                    distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1000000)
                 }
             });
             window.viewer.entities.add(ellipse);
@@ -251,6 +223,7 @@ let layers = {
                     style: Cesium.LabelStyle.FILL_AND_OUTLINE,
                     verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
                     // heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+                    heightReference: Cesium.HeightReference.NONE, // 不贴地
                     zIndex: 200,
                     height: 0,// ← 前景层
                     // depthTest: false,                               // ← 关键：不写入深度
